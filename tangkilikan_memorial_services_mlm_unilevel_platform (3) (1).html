@@ -1,0 +1,3129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tangkilikan Memorial Services | 15-Level Unilevel Executive Platform</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cinzel, Great Vibes, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    // Define backdrop image fallback handler early in <head> before <body> images load
+    function handleBackdropFallback(img) {
+      if (!img.dataset.fallbackStep) {
+        img.dataset.fallbackStep = '1';
+        img.src = 'waldemar-brandt-jeTlob-Wv0M-unsplash_2.jpg';
+      } else if (img.dataset.fallbackStep === '1') {
+        img.dataset.fallbackStep = '2';
+        img.src = 'waldemar-brandt-jeTlob-Wv0M-unsplash.jpg';
+      } else {
+        img.style.display = 'none';
+      }
+    }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Cinzel', 'serif'],
+            script: ['Great Vibes', 'cursive'],
+          },
+          colors: {
+            royal: {
+              950: '#030917',
+              900: '#07132b',
+              800: '#0e244d',
+              700: '#1d4ed8',
+            },
+            gold: {
+              300: '#f7e08b',
+              400: '#f5d365',
+              500: '#d4af37',
+              600: '#b78d1e',
+              700: '#9e7816',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --mouse-x: 50%;
+      --mouse-y: 50%;
+    }
+
+    body {
+      background: radial-gradient(circle at 18% 12%, #0e244d 0%, #07132b 44%, #030917 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Volumetric Celestial Aurora & Sunbeams (Zero Bubbles / Zero Particles) */
+    .aurora-beams {
+      position: fixed;
+      inset: -20%;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 45% at 50% 0%, rgba(247, 224, 139, 0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 85% 25%, rgba(29, 78, 216, 0.16) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 15% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 65%);
+      animation: auroraDrift 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes auroraDrift {
+      0% { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+      50% { transform: translate3d(1.5%, 1.5%, 0) scale(1.04); }
+      100% { transform: translate3d(-0.5%, 2%, 0) scale(1.01); }
+    }
+
+    /* Ken Burns Cinematic Memorial Garden Backdrop */
+    @keyframes kenBurnsSlow {
+      0% { transform: scale(1.04) translate3d(0, 0, 0); }
+      50% { transform: scale(1.13) translate3d(-1.5%, -1%, 0); }
+      100% { transform: scale(1.06) translate3d(1.2%, -0.5%, 0); }
+    }
+
+    .ken-burns-bg {
+      animation: kenBurnsSlow 28s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    /* Metallic Shimmer */
+    @keyframes metallicSweep {
+      0% { transform: translateX(-140%) skewX(-22deg); }
+      45%, 100% { transform: translateX(260%) skewX(-22deg); }
+    }
+
+    .shimmer-overlay {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer-overlay::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, rgba(255, 248, 220, 0.28), transparent);
+      animation: metallicSweep 5.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    /* Staggered Section & Card Entrances */
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .animate-section-in {
+      animation: fadeSlideUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .stagger-1 { animation-delay: 0.05s; }
+    .stagger-2 { animation-delay: 0.12s; }
+    .stagger-3 { animation-delay: 0.19s; }
+    .stagger-4 { animation-delay: 0.26s; }
+
+    /* Interactive 3D Tilt & Cursor Specular Spotlight */
+    .tilt-card {
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+      will-change: transform;
+    }
+
+    .tilt-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(360px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(247, 224, 139, 0.16), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .tilt-card:hover::before {
+      opacity: 1;
+    }
+
+    .tilt-card:hover {
+      border-color: rgba(247, 224, 139, 0.52);
+      box-shadow: 0 18px 40px rgba(3, 9, 23, 0.65), 0 0 28px rgba(212, 175, 55, 0.2);
+    }
+
+    .celestial-gradient {
+      background: linear-gradient(135deg, #030917 0%, #07132b 50%, #0e244d 100%);
+    }
+
+    .gold-gradient {
+      background: linear-gradient(135deg, #9e7816 0%, #d4af37 45%, #f7e08b 78%, #d4af37 100%);
+    }
+
+    .gold-gradient-hover:hover {
+      background: linear-gradient(135deg, #b78d1e 0%, #e5c158 50%, #fff2b2 100%);
+    }
+
+    .gold-text {
+      background: linear-gradient(180deg, #fff8d6 0%, #f7e08b 38%, #d4af37 72%, #9e7816 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: rgba(7, 19, 43, 0.66);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      box-shadow: 0 12px 32px rgba(3, 9, 23, 0.52);
+    }
+
+    .glass-card-strong {
+      background: rgba(3, 9, 23, 0.84);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(247, 224, 139, 0.36);
+      box-shadow: 0 20px 50px rgba(2, 6, 18, 0.78);
+    }
+
+    .gold-glow {
+      box-shadow: 0 0 24px rgba(212, 175, 55, 0.2), inset 0 0 12px rgba(245, 211, 101, 0.08);
+    }
+
+    .cascade-lit {
+      opacity: 1 !important;
+      border-color: rgba(247, 224, 139, 0.7) !important;
+      background: linear-gradient(90deg, rgba(212, 175, 55, 0.22), rgba(14, 36, 77, 0.7)) !important;
+      transform: translateX(4px);
+    }
+
+    /* ===================================================================== */
+    /* SEAMLESS BORDERLESS TRANSPARENT FROSTED GLASS & GRADIENT AUTH THEME   */
+    /* ===================================================================== */
+    #auth-screen,
+    #auth-screen *,
+    #auth-screen *::before,
+    #auth-screen *::after {
+      border: none !important;
+      outline: none !important;
+    }
+
+    #auth-screen h1,
+    #auth-screen h2,
+    #auth-screen label,
+    #auth-screen p,
+    #auth-screen span {
+      text-shadow: 0 1px 10px rgba(2, 8, 23, 0.72);
+    }
+
+    #auth-screen .auth-glass-tab-active,
+    #auth-screen .auth-glass-btn,
+    #auth-screen .gold-gradient {
+      text-shadow: none !important;
+    }
+
+    .auth-transparent-glass {
+      position: relative;
+      background: linear-gradient(
+        145deg,
+        rgba(10, 25, 54, 0.22) 0%,
+        rgba(7, 19, 43, 0.16) 48%,
+        rgba(212, 169, 74, 0.10) 100%
+      );
+      backdrop-filter: blur(11px) saturate(135%);
+      -webkit-backdrop-filter: blur(11px) saturate(135%);
+      box-shadow: 0 28px 64px -14px rgba(2, 8, 23, 0.58);
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+    }
+
+    .auth-glass-left-pane {
+      background: linear-gradient(
+        165deg,
+        rgba(15, 38, 78, 0.18) 0%,
+        rgba(10, 25, 54, 0.10) 55%,
+        rgba(212, 169, 74, 0.08) 100%
+      );
+    }
+
+    .auth-glass-right-pane {
+      background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(10, 25, 54, 0.12) 58%,
+        rgba(212, 169, 74, 0.06) 100%
+      );
+    }
+
+    .auth-crest-aura {
+      background: radial-gradient(circle at 50% 45%, rgba(244, 212, 124, 0.24) 0%, rgba(29, 78, 216, 0.12) 52%, transparent 76%);
+      box-shadow: 0 16px 38px -10px rgba(2, 8, 23, 0.45), 0 0 32px rgba(244, 212, 124, 0.16);
+    }
+
+    .auth-glass-subcard {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.07) 0%, rgba(10, 25, 54, 0.18) 100%);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      box-shadow: 0 8px 22px -8px rgba(2, 8, 23, 0.38);
+    }
+
+    .auth-glass-tab-bar {
+      background: rgba(6, 16, 38, 0.20);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px -6px rgba(2, 8, 23, 0.36);
+    }
+
+    .auth-glass-tab-active {
+      background: linear-gradient(135deg, #f4d47c 0%, #d4a94a 52%, #1e40af 135%);
+      color: #050f24;
+      box-shadow: 0 8px 22px -4px rgba(212, 169, 74, 0.42);
+    }
+
+    .auth-glass-input {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.10), rgba(10, 25, 54, 0.20));
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      box-shadow: 0 6px 18px -4px rgba(2, 8, 23, 0.32);
+      transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .auth-glass-input::placeholder {
+      color: rgba(247, 224, 139, 0.72);
+    }
+
+    .auth-glass-input:focus {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(15, 38, 78, 0.28));
+      box-shadow: 0 0 24px rgba(244, 212, 124, 0.24), 0 8px 20px -4px rgba(2, 8, 23, 0.42);
+    }
+
+    .auth-glass-pkg {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.06) 0%, rgba(10, 25, 54, 0.20) 100%);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      box-shadow: 0 8px 20px -6px rgba(2, 8, 23, 0.34);
+      transition: all 0.25s ease;
+    }
+
+    .auth-glass-pkg:hover {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.11) 0%, rgba(16, 40, 84, 0.26) 100%);
+    }
+
+    .peer:checked + .auth-glass-pkg-gold {
+      background: linear-gradient(145deg, rgba(244, 212, 124, 0.24) 0%, rgba(212, 169, 74, 0.14) 52%, rgba(15, 38, 78, 0.26) 100%);
+      box-shadow: 0 0 26px rgba(244, 212, 124, 0.26), 0 10px 24px -6px rgba(2, 8, 23, 0.42);
+    }
+
+    .peer:checked + .auth-glass-pkg-sapphire {
+      background: linear-gradient(145deg, rgba(59, 130, 246, 0.26) 0%, rgba(29, 78, 216, 0.16) 52%, rgba(15, 38, 78, 0.26) 100%);
+      box-shadow: 0 0 26px rgba(59, 130, 246, 0.26), 0 10px 24px -6px rgba(2, 8, 23, 0.42);
+    }
+
+    .auth-glass-btn {
+      background: linear-gradient(135deg, #f4d47c 0%, #d4a94a 50%, #b58628 100%);
+      box-shadow: 0 12px 28px -6px rgba(212, 169, 74, 0.44);
+      transition: transform 0.22s ease, box-shadow 0.25s ease, filter 0.22s ease;
+    }
+
+    .auth-glass-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 34px -6px rgba(244, 212, 124, 0.56);
+    }
+
+    .auth-glass-pill {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(10, 25, 54, 0.22));
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+
+    .auth-glass-left-pane {
+      background: linear-gradient(
+        165deg,
+        rgba(15, 38, 78, 0.32) 0%,
+        rgba(10, 25, 54, 0.18) 55%,
+        rgba(212, 169, 74, 0.12) 100%
+      );
+    }
+
+    .auth-glass-right-pane {
+      background: linear-gradient(
+        155deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        rgba(10, 25, 54, 0.20) 58%,
+        rgba(212, 169, 74, 0.08) 100%
+      );
+    }
+
+    .auth-crest-aura {
+      background: radial-gradient(circle at 50% 45%, rgba(244, 212, 124, 0.28) 0%, rgba(29, 78, 216, 0.16) 52%, transparent 76%);
+      box-shadow: 0 18px 44px -10px rgba(2, 8, 23, 0.55), 0 0 36px rgba(244, 212, 124, 0.18);
+    }
+
+    .auth-glass-subcard {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(15, 38, 78, 0.26) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 10px 26px -8px rgba(2, 8, 23, 0.45);
+    }
+
+    .auth-glass-tab-bar {
+      background: rgba(6, 16, 38, 0.32);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 24px -6px rgba(2, 8, 23, 0.42);
+    }
+
+    .auth-glass-tab-active {
+      background: linear-gradient(135deg, #f4d47c 0%, #d4a94a 52%, #1e40af 135%);
+      color: #050f24;
+      box-shadow: 0 8px 22px -4px rgba(212, 169, 74, 0.42);
+    }
+
+    .auth-glass-input {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.11), rgba(15, 38, 78, 0.28));
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 6px 18px -4px rgba(2, 8, 23, 0.35);
+      transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+    }
+
+    .auth-glass-input::placeholder {
+      color: rgba(244, 212, 124, 0.58);
+    }
+
+    .auth-glass-input:focus {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(20, 48, 96, 0.36));
+      box-shadow: 0 0 24px rgba(244, 212, 124, 0.22), 0 8px 20px -4px rgba(2, 8, 23, 0.45);
+    }
+
+    .auth-glass-pkg {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.07) 0%, rgba(12, 30, 66, 0.28) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 8px 20px -6px rgba(2, 8, 23, 0.38);
+      transition: all 0.25s ease;
+    }
+
+    .auth-glass-pkg:hover {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.11) 0%, rgba(16, 40, 84, 0.34) 100%);
+    }
+
+    .peer:checked + .auth-glass-pkg-gold {
+      background: linear-gradient(145deg, rgba(244, 212, 124, 0.26) 0%, rgba(212, 169, 74, 0.16) 52%, rgba(15, 38, 78, 0.36) 100%);
+      box-shadow: 0 0 26px rgba(244, 212, 124, 0.26), 0 10px 24px -6px rgba(2, 8, 23, 0.48);
+    }
+
+    .peer:checked + .auth-glass-pkg-sapphire {
+      background: linear-gradient(145deg, rgba(59, 130, 246, 0.28) 0%, rgba(29, 78, 216, 0.18) 52%, rgba(15, 38, 78, 0.36) 100%);
+      box-shadow: 0 0 26px rgba(59, 130, 246, 0.26), 0 10px 24px -6px rgba(2, 8, 23, 0.48);
+    }
+
+    .auth-glass-btn {
+      background: linear-gradient(135deg, #f4d47c 0%, #d4a94a 50%, #b58628 100%);
+      box-shadow: 0 12px 28px -6px rgba(212, 169, 74, 0.44);
+      transition: transform 0.22s ease, box-shadow 0.25s ease, filter 0.22s ease;
+    }
+
+    .auth-glass-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 16px 34px -6px rgba(244, 212, 124, 0.56);
+    }
+
+    .auth-glass-pill {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(10, 25, 54, 0.32));
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Prominent 5-Minute Trial Countdown Styles */
+    .countdown-gold-glow {
+      text-shadow: 0 0 24px rgba(247, 224, 139, 0.55), 0 4px 16px rgba(2, 8, 23, 0.85);
+    }
+
+    .countdown-crimson-alert {
+      color: #fb7185 !important;
+      background: none !important;
+      -webkit-text-fill-color: #fb7185 !important;
+      text-shadow: 0 0 26px rgba(244, 63, 94, 0.85), 0 4px 16px rgba(2, 8, 23, 0.9);
+      animation: pulseCrimson 1s ease-in-out infinite;
+    }
+
+    @keyframes pulseCrimson {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.04); opacity: 0.84; }
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #030917;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #d4af37, #9e7816);
+      border-radius: 9999px;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.16);
+      height: 8px;
+      border-radius: 999px;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f7e08b, #d4af37);
+      border: 2px solid #030917;
+      cursor: pointer;
+      box-shadow: 0 0 12px rgba(212, 175, 55, 0.85);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-royal-950">
+
+  <!-- Full-Bleed Permanent Memorial Woodland Park Backdrop Wallpaper (waldemar-brandt-jeTlob-Wv0M-unsplash_3.jpg) -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-royal-950">
+    <!-- Subtle Woodland & Celestial Ambient Base Layer -->
+    <div
+      class="absolute inset-0 ken-burns-bg opacity-40"
+      style="background: radial-gradient(ellipse 80% 60% at 30% 65%, rgba(22, 101, 52, 0.34) 0%, transparent 62%), radial-gradient(ellipse 75% 55% at 75% 35%, rgba(29, 78, 216, 0.32) 0%, transparent 65%), linear-gradient(160deg, #041326 0%, #071e26 52%, #030917 100%);"
+    ></div>
+    <img
+      id="global-backdrop-img"
+      src="waldemar-brandt-jeTlob-Wv0M-unsplash_3.jpg"
+      alt="Tangkilikan Memorial Woodland Gardens"
+      onerror="handleBackdropFallback(this)"
+      class="relative w-full h-full object-cover object-center opacity-[0.94] ken-burns-bg transition-all duration-700"
+    />
+    <!-- Light Royal Celestial Blue Atmospheric Edge Vignette (Keeps Woodland Crisp & Vivid on Login) -->
+    <div
+      id="global-backdrop-vignette"
+      class="absolute inset-0 transition-opacity duration-700"
+      style="background: radial-gradient(circle at 50% 42%, rgba(7, 19, 43, 0.12) 0%, rgba(7, 19, 43, 0.34) 62%, rgba(3, 9, 23, 0.68) 100%);"
+    ></div>
+    <div
+      id="dashboard-backdrop-tint"
+      class="absolute inset-0 bg-royal-950/30 opacity-0 pointer-events-none transition-opacity duration-700"
+    ></div>
+  </div>
+
+  <!-- Volumetric Celestial Aurora Backdrop (No Bubbles / No Particles) -->
+  <div class="aurora-beams"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed top-4 right-4 z-[90] flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- Permanent System Expiration Lockout Screen (Triggered at 00:00) -->
+  <div id="system-expired-screen" class="fixed inset-0 z-[100] hidden items-center justify-center bg-royal-950/95 backdrop-blur-2xl p-4">
+    <div class="glass-card-strong rounded-3xl max-w-lg w-full p-8 text-center border border-rose-500/50 shadow-2xl relative overflow-hidden">
+      <div class="w-20 h-20 rounded-full mx-auto mb-5 bg-rose-500/20 border border-rose-400/50 flex items-center justify-center text-rose-400 shadow-lg">
+        <i data-lucide="lock" class="w-10 h-10"></i>
+      </div>
+      <span class="px-3 py-1 rounded-full text-[11px] font-extrabold bg-rose-500/25 border border-rose-400/40 text-rose-200 uppercase tracking-widest">
+        System Access Expired
+      </span>
+      <h2 class="font-serif text-2xl sm:text-3xl font-extrabold text-white mt-3">
+        Trial Period Concluded
+      </h2>
+      <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+        The 5-minute evaluation session for <strong class="text-gold-300">Tangkilikan Memorial Services</strong> has expired. All platform modules, genealogy trees, and transactions are now permanently locked.
+      </p>
+      <div class="mt-6 p-4 rounded-2xl bg-royal-950/90 border border-rose-500/35">
+        <p class="text-[11px] uppercase tracking-widest text-rose-300 font-bold">System Status</p>
+        <p class="font-mono text-2xl font-black text-rose-400 mt-1">00:00 — LOCKED</p>
+        <p id="expired-timestamp-label" class="text-[11px] text-slate-400 mt-1">Session terminated automatically upon countdown completion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Confirmation Modal (No native confirm/alert) -->
+  <div id="confirm-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-royal-950/80 backdrop-blur-md p-4">
+    <div class="glass-card-strong rounded-3xl max-w-md w-full p-6 border border-gold-500/40 shadow-2xl">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 rounded-xl gold-gradient text-royal-950 flex items-center justify-center">
+          <i data-lucide="shield-alert" class="w-5 h-5"></i>
+        </div>
+        <h3 id="confirm-title" class="font-serif text-lg font-bold gold-text">Confirm Action</h3>
+      </div>
+      <p id="confirm-message" class="text-sm text-slate-200 leading-relaxed mb-6">Are you sure you want to proceed?</p>
+      <div class="flex items-center justify-end gap-3">
+        <button id="confirm-cancel-btn" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-slate-200 transition">Cancel</button>
+        <button id="confirm-ok-btn" class="px-5 py-2.5 rounded-xl gold-gradient gold-gradient-hover text-royal-950 text-xs font-extrabold uppercase tracking-wider shadow-lg transition">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sequential 15-Level Gold Cascade Visualizer Modal -->
+  <div id="cascade-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-royal-950/85 backdrop-blur-md p-4">
+    <div class="glass-card-strong rounded-3xl max-w-xl w-full p-6 border border-gold-500/50 shadow-2xl">
+      <div class="flex items-start justify-between gap-3 pb-4 border-b border-white/10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold gold-gradient text-royal-950 uppercase">15-Level Commission Cascade</span>
+          <h3 class="font-serif text-xl font-bold gold-text mt-1.5">Unilevel Payout Distribution Complete</h3>
+          <p id="cascade-modal-subtitle" class="text-xs text-slate-300 mt-0.5">Associate activated and upline commissions credited.</p>
+        </div>
+        <div class="text-right">
+          <p class="text-[10px] uppercase tracking-wider text-slate-400">Total Credited</p>
+          <p id="cascade-modal-total" class="text-lg font-extrabold text-emerald-400">₱0.00</p>
+        </div>
+      </div>
+
+      <div id="cascade-modal-steps" class="my-4 max-h-80 overflow-y-auto space-y-2 pr-1">
+        <!-- Populated sequentially -->
+      </div>
+
+      <div class="flex justify-end pt-3 border-t border-white/10">
+        <button onclick="closeCascadeModal()" class="px-6 py-2.5 rounded-xl gold-gradient gold-gradient-hover text-royal-950 font-extrabold text-xs uppercase tracking-wider shadow-lg transition">
+          Continue to Dashboard
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- SEAMLESS BORDERLESS FROSTED GLASS & GRADIENT AUTHENTICATION PORTAL    -->
+  <!-- ===================================================================== -->
+  <div id="auth-screen" class="min-h-screen w-full flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden">
+    <!-- Large Prominent 5-Minute System Expiration Countdown Banner -->
+    <div id="auth-countdown-box" class="w-full max-w-5xl mb-5 flex justify-center relative z-10">
+      <div class="auth-transparent-glass rounded-3xl px-7 sm:px-10 py-4 flex flex-col sm:flex-row items-center gap-3 sm:gap-6 text-center sm:text-left">
+        <div class="flex items-center gap-2.5">
+          <div class="w-11 h-11 rounded-2xl auth-glass-subcard flex items-center justify-center text-gold-300 animate-pulse">
+            <i data-lucide="clock" id="auth-countdown-icon" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <p class="text-xs sm:text-sm font-extrabold uppercase tracking-[0.2em] text-gold-300">System Trial Expires In</p>
+            <p class="text-[11px] text-slate-200/85">Permanent lockout upon reaching 00:00</p>
+          </div>
+        </div>
+        <div id="auth-countdown-timer" class="font-mono text-4xl sm:text-5xl font-black tracking-widest gold-text countdown-gold-glow select-none">
+          05:00
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Seamless Borderless Transparent Frosted Glass Card -->
+    <div id="auth-glass-card" class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 auth-transparent-glass rounded-3xl overflow-hidden relative z-10 my-auto">
+      <!-- Dynamic Cursor Specular Glass Sheen -->
+      <div id="auth-glass-specular" class="absolute inset-0 pointer-events-none z-0 opacity-0 transition-opacity duration-300"></div>
+
+      <!-- Left Panel: Floating Brand Crest & 15-Level Unilevel Highlights -->
+      <div class="lg:col-span-5 auth-glass-left-pane p-7 sm:p-9 flex flex-col justify-between relative z-10">
+        <div>
+          <div class="flex flex-col items-center text-center mb-6">
+            <!-- Borderless Floating Circular Glow Aura Around Official Crest -->
+            <div class="w-44 h-44 sm:w-48 sm:h-48 rounded-full auth-crest-aura flex items-center justify-center p-3 mb-5 relative">
+              <img
+                src="Tangkilik Memorial Services Tribute Logo.png"
+                alt="Tangkilikan Memorial Services Official Crest"
+                onerror="this.style.display='none'; document.getElementById('auth-svg-fallback').classList.remove('hidden');"
+                class="w-full h-full rounded-full object-contain drop-shadow-2xl"
+              />
+              <svg id="auth-svg-fallback" viewBox="0 0 240 240" class="w-full h-full hidden rounded-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="radiantSun" cx="50%" cy="32%" r="55%">
+                    <stop offset="0%" stop-color="#FFF9D6" stop-opacity="0.95"/>
+                    <stop offset="50%" stop-color="#F7E08B" stop-opacity="0.32"/>
+                    <stop offset="100%" stop-color="#07132b" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="metallicGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFF6CC"/>
+                    <stop offset="38%" stop-color="#D4AF37"/>
+                    <stop offset="72%" stop-color="#F7E08B"/>
+                    <stop offset="100%" stop-color="#9E7816"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="120" cy="120" r="116" fill="url(#radiantSun)"/>
+                <!-- Gold Cross -->
+                <rect x="114" y="24" width="12" height="62" rx="3" fill="url(#metallicGold)"/>
+                <rect x="95" y="41" width="50" height="11" rx="3" fill="url(#metallicGold)"/>
+                <!-- White Dove with Olive Branch -->
+                <path d="M96 96 C86 76, 70 57, 65 45 C79 53, 94 64, 105 78 C116 74, 128 70, 137 70 C143 70, 147 75, 144 80 C139 89, 127 101, 108 103 C100 104, 92 102, 85 99 Z" fill="#FFFFFF"/>
+                <path d="M144 76 Q156 72 164 64" stroke="#4ADE80" stroke-width="2" fill="none"/>
+                <ellipse cx="155" cy="70" rx="4" ry="2" transform="rotate(-25 155 70)" fill="#22C55E"/>
+                <ellipse cx="161" cy="66" rx="4" ry="2" transform="rotate(-25 161 66)" fill="#16A34A"/>
+                <!-- Gold Ribbon -->
+                <path d="M 46 116 Q 96 100 126 109 T 194 111 Q 148 121 114 113 T 46 116 Z" fill="url(#metallicGold)"/>
+                <!-- Brand Typography -->
+                <text x="120" y="142" text-anchor="middle" font-family="Cinzel, serif" font-weight="800" font-size="18" letter-spacing="1.2" fill="url(#metallicGold)">TANGKILIKAN</text>
+                <text x="120" y="160" text-anchor="middle" font-family="Cinzel, serif" font-weight="700" font-size="11" letter-spacing="2.8" fill="#FFFFFF">MEMORIAL</text>
+                <text x="120" y="182" text-anchor="middle" font-family="Great Vibes, cursive" font-size="22" fill="url(#metallicGold)">Services</text>
+                <!-- White Lily -->
+                <ellipse cx="111" cy="197" rx="7" ry="3" fill="#E2E8F0"/>
+                <ellipse cx="129" cy="197" rx="7" ry="3" fill="#E2E8F0"/>
+                <circle cx="120" cy="197" r="4.5" fill="#FFFFFF"/>
+                <circle cx="120" cy="197" r="2" fill="#F7E08B"/>
+              </svg>
+            </div>
+
+            <h1 class="font-serif text-xl sm:text-2xl font-extrabold tracking-wide gold-text leading-tight">
+              TANGKILIKAN MEMORIAL SERVICES
+            </h1>
+            <p class="text-xs sm:text-sm font-semibold tracking-wider uppercase text-blue-200/90 mt-1">
+              15-Level Unilevel Executive Network
+            </p>
+            <p class="text-xs italic text-gold-300/85 mt-1.5">
+              “Honoring Lives... Celebrating Memories... Forever in Our Hearts.”
+            </p>
+          </div>
+
+          <!-- Borderless Frosted Compensation Tier Summaries -->
+          <div class="space-y-3 mt-4">
+            <div class="rounded-2xl auth-glass-subcard p-3.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-gold-300">Executive Memorial Plan</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold gold-gradient text-royal-950 shadow">₱12,000</span>
+              </div>
+              <p class="text-xs text-slate-200 mt-1.5 leading-relaxed">
+                15-Level Payout: <strong class="text-gold-300">₱800</strong> (L1–L3) • <strong class="text-gold-300">₱500</strong> (L4–L5) • <strong class="text-gold-300">₱300</strong> (L6–L8) • <strong class="text-gold-300">₱150</strong> (L9–L10) • <strong class="text-gold-300">₱100</strong> (L11–L13) • <strong class="text-gold-300">₱50</strong> (L14–L15)
+              </p>
+            </div>
+
+            <div class="rounded-2xl auth-glass-subcard p-3.5">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase tracking-wider text-blue-200">Standard Memorial Plan</span>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-gradient-to-r from-blue-500/45 to-sky-400/35 text-white">₱6,000</span>
+              </div>
+              <p class="text-xs text-slate-200 mt-1.5 leading-relaxed">
+                15-Level Payout: <strong class="text-blue-200">₱400</strong> (L1–L3) • <strong class="text-blue-200">₱250</strong> (L4–L6) • <strong class="text-blue-200">₱150</strong> (L7–L9) • <strong class="text-blue-200">₱75</strong> (L10–L12) • <strong class="text-blue-200">₱50</strong> (L13–L14) • <strong class="text-blue-200">₱25</strong> (L15)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtle Master Admin Credential Hint Pill -->
+        <div class="mt-6 rounded-2xl auth-glass-pill px-4 py-2.5 flex items-center justify-between text-xs text-blue-100/90">
+          <span class="text-slate-300">Master Admin Access:</span>
+          <span class="font-mono text-gold-300 font-semibold">admin / 123456 • TMS-ADMIN</span>
+        </div>
+      </div>
+
+      <!-- Right Panel: Seamless Borderless Login & Sign Up Forms -->
+      <div class="lg:col-span-7 p-7 sm:p-10 flex flex-col justify-center auth-glass-right-pane relative z-10">
+        <!-- Borderless Translucent Pill Tab Switcher -->
+        <div class="grid grid-cols-2 gap-2 p-1.5 rounded-2xl auth-glass-tab-bar mb-7">
+          <button id="tab-login-btn" onclick="switchAuthTab('login')" class="py-2.5 px-4 rounded-xl text-sm font-bold transition auth-glass-tab-active">
+            Member Login
+          </button>
+          <button id="tab-signup-btn" onclick="switchAuthTab('signup')" class="py-2.5 px-4 rounded-xl text-sm font-bold transition text-slate-200 hover:text-white hover:bg-white/10">
+            Sign Up / Enroll
+          </button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="login-form" onsubmit="handleLogin(event)" class="space-y-5">
+          <div class="mb-2">
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white drop-shadow">Executive Portal Sign In</h2>
+            <p class="text-sm text-slate-200/85 mt-1">Access your 15-level unilevel genealogy, e-wallet, and downline network.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-gold-300 mb-2">Username</label>
+            <div class="relative">
+              <i data-lucide="user" class="w-4 h-4 text-gold-300 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input id="login-username" type="text" required autocomplete="username" placeholder="Enter your username (e.g. admin)" class="w-full pl-11 pr-4 py-3.5 rounded-2xl auth-glass-input text-sm text-white" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-gold-300 mb-2">Password</label>
+            <div class="relative">
+              <i data-lucide="lock" class="w-4 h-4 text-gold-300 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input id="login-password" type="password" required autocomplete="current-password" placeholder="Enter your password" class="w-full pl-11 pr-4 py-3.5 rounded-2xl auth-glass-input text-sm text-white" />
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-2xl auth-glass-btn text-royal-950 font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 mt-2">
+            <i data-lucide="log-in" class="w-4 h-4"></i>
+            Sign In to Executive Portal
+          </button>
+        </form>
+
+        <!-- SIGN UP FORM -->
+        <form id="signup-form" onsubmit="handleSignup(event)" class="space-y-4 hidden">
+          <div class="mb-1">
+            <h2 class="text-2xl font-serif font-bold text-white drop-shadow">Associate Enrollment</h2>
+            <p class="text-xs text-slate-200/85 mt-0.5">Enroll with a valid Sponsor Referral Code to activate your 15-level account.</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gold-300 mb-1.5">Sponsor Referral Code *</label>
+            <div class="relative">
+              <i data-lucide="key-round" class="w-4 h-4 text-gold-300 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+              <input id="signup-sponsor-code" type="text" required value="TMS-ADMIN" oninput="validateSignupSponsorCode()" placeholder="e.g., TMS-ADMIN" class="w-full pl-10 pr-4 py-2.5 rounded-2xl auth-glass-input text-sm text-white uppercase font-mono" />
+            </div>
+            <p id="signup-sponsor-feedback" class="text-[11px] text-emerald-300 mt-1.5">Sponsor verified: Tangkilikan Master Admin (TMS-ADMIN)</p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-semibold text-gold-300 mb-1.5">Full Name *</label>
+              <input id="signup-fullname" type="text" required placeholder="Juan Dela Cruz" class="w-full px-4 py-2.5 rounded-2xl auth-glass-input text-sm text-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gold-300 mb-1.5">Username *</label>
+              <input id="signup-username" type="text" required placeholder="juandelacruz" class="w-full px-4 py-2.5 rounded-2xl auth-glass-input text-sm text-white" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <div>
+              <label class="block text-xs font-semibold text-gold-300 mb-1.5">Email Address *</label>
+              <input id="signup-email" type="email" required placeholder="juan@example.com" class="w-full px-4 py-2.5 rounded-2xl auth-glass-input text-sm text-white" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gold-300 mb-1.5">Mobile Number *</label>
+              <input id="signup-mobile" type="tel" required placeholder="0917-000-0000" class="w-full px-4 py-2.5 rounded-2xl auth-glass-input text-sm text-white" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gold-300 mb-1.5">Password *</label>
+            <input id="signup-password" type="password" required minlength="4" placeholder="Create secure password" class="w-full px-4 py-2.5 rounded-2xl auth-glass-input text-sm text-white" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gold-300 mb-2">Select Memorial Registration Package *</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="cursor-pointer">
+                <input type="radio" name="signup-package" value="12000" checked class="peer sr-only" />
+                <div class="p-3.5 rounded-2xl auth-glass-pkg auth-glass-pkg-gold">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-sm text-white">Executive Memorial Plan</span>
+                    <span class="font-extrabold text-sm text-gold-300">₱12,000</span>
+                  </div>
+                  <p class="text-[11px] text-slate-200 mt-1">L1–L3: ₱800 | L4–L5: ₱500 | L6–L8: ₱300</p>
+                </div>
+              </label>
+
+              <label class="cursor-pointer">
+                <input type="radio" name="signup-package" value="6000" class="peer sr-only" />
+                <div class="p-3.5 rounded-2xl auth-glass-pkg auth-glass-pkg-sapphire">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-sm text-white">Standard Memorial Plan</span>
+                    <span class="font-extrabold text-sm text-blue-200">₱6,000</span>
+                  </div>
+                  <p class="text-[11px] text-slate-200 mt-1">L1–L3: ₱400 | L4–L6: ₱250 | L7–L9: ₱150</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="w-full py-3.5 rounded-2xl auth-glass-btn text-royal-950 font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 mt-1">
+            <i data-lucide="user-plus" class="w-4 h-4"></i>
+            Complete Enrollment & Activate
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PRODUCTION DASHBOARD PLATFORM                                         -->
+  <!-- ===================================================================== -->
+  <div id="dashboard-screen" class="hidden min-h-screen flex flex-col lg:flex-row relative z-10">
+
+    <!-- Mobile Backdrop -->
+    <div id="sidebar-backdrop" onclick="toggleMobileSidebar(false)" class="fixed inset-0 bg-royal-950/80 backdrop-blur-xs z-30 hidden lg:hidden"></div>
+
+    <!-- SIDEBAR -->
+    <aside id="sidebar" class="fixed lg:sticky top-0 left-0 z-40 h-screen w-72 bg-royal-950 overflow-hidden backdrop-blur-xl border-r border-gold-500/35 flex flex-col justify-between transition-transform duration-300 -translate-x-full lg:translate-x-0 shadow-2xl">
+      <!-- Sidebar Sunlit Woodland Memorial Garden Wallpaper & Translucent Royal Celestial Blue Frosted Glass Overlay -->
+      <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <img
+          src="waldemar-brandt-HTo9Kg9iTzU-unsplash_5.jpg"
+          alt="Tangkilikan Memorial Sunlit Woodland Sanctuary"
+          onerror="if(!this.dataset.fb){this.dataset.fb='1';this.src='waldemar-brandt-HTo9Kg9iTzU-unsplash.jpg';}else{this.style.display='none';}"
+          class="w-full h-full object-cover object-center opacity-70 ken-burns-bg"
+        />
+        <div
+          class="absolute inset-0 backdrop-blur-[2px]"
+          style="background: linear-gradient(180deg, rgba(7, 19, 43, 0.56) 0%, rgba(14, 36, 77, 0.42) 48%, rgba(3, 9, 23, 0.72) 100%);"
+        ></div>
+      </div>
+
+      <div class="relative z-10 p-5 overflow-y-auto">
+        <!-- Brand Header -->
+        <div class="flex items-center gap-3 p-3 rounded-2xl bg-royal-950/55 backdrop-blur-md border border-gold-500/30 shadow-lg">
+          <div class="w-11 h-11 rounded-xl border border-gold-400/50 bg-royal-950/90 flex-shrink-0 flex items-center justify-center overflow-hidden shadow-lg shimmer-overlay">
+            <img
+              src="Tangkilik Memorial Services Tribute Logo.png"
+              alt="Tangkilikan Crest"
+              onerror="this.style.display='none'; document.getElementById('sidebar-svg-fallback').classList.remove('hidden');"
+              class="w-full h-full object-cover"
+            />
+            <svg id="sidebar-svg-fallback" viewBox="0 0 64 64" class="w-8 h-8 hidden">
+              <circle cx="32" cy="32" r="29" fill="#030917" stroke="#d4af37" stroke-width="2.5"/>
+              <rect x="30" y="10" width="4" height="24" fill="#f7e08b"/>
+              <rect x="23" y="16" width="18" height="4" fill="#f7e08b"/>
+              <path d="M15 43 Q32 34 49 43 Q32 46 15 43 Z" fill="#d4af37"/>
+            </svg>
+          </div>
+          <div class="min-w-0">
+            <h2 class="font-serif text-sm font-extrabold gold-text truncate drop-shadow">TANGKILIKAN</h2>
+            <p class="text-[11px] font-semibold tracking-widest text-white uppercase drop-shadow">Memorial Services</p>
+            <p class="text-[10px] text-gold-300/95 truncate">15-Level Unilevel System</p>
+          </div>
+        </div>
+
+        <!-- Logged-In Member Card -->
+        <div class="mt-4 p-3.5 rounded-2xl bg-royal-950/65 backdrop-blur-md border border-gold-500/35 tilt-card shadow-lg">
+          <div class="flex items-center justify-between gap-2 mb-1">
+            <span id="sidebar-user-name" class="text-sm font-bold text-white truncate drop-shadow">Tangkilikan Master Admin</span>
+            <span id="sidebar-user-badge" class="px-2 py-0.5 rounded-full text-[10px] font-extrabold gold-gradient text-royal-950 flex-shrink-0">Master</span>
+          </div>
+          <div class="flex items-center justify-between text-xs text-blue-100">
+            <span>@<span id="sidebar-user-username">admin</span></span>
+            <span id="sidebar-user-refcode" class="font-mono font-bold text-gold-300">TMS-ADMIN</span>
+          </div>
+          <div class="mt-2.5 pt-2.5 border-t border-white/15 flex items-center justify-between">
+            <span class="text-[11px] text-slate-200">E-Wallet:</span>
+            <span id="sidebar-user-wallet" class="text-sm font-extrabold text-gold-300">₱0.00</span>
+          </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="mt-5 space-y-1.5">
+          <button onclick="navigateTo('overview')" data-nav="overview" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left gold-gradient text-royal-950 shadow-md">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+            <span>Dashboard Overview</span>
+          </button>
+
+          <button onclick="navigateTo('matrix')" data-nav="matrix" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left text-white bg-royal-950/50 backdrop-blur-md border border-white/10 hover:bg-royal-950/75 shadow-sm">
+            <i data-lucide="network" class="w-4 h-4 text-gold-400"></i>
+            <span>15-Level Matrix & Tree</span>
+          </button>
+
+          <button onclick="navigateTo('encode')" data-nav="encode" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left text-white bg-royal-950/50 backdrop-blur-md border border-white/10 hover:bg-royal-950/75 shadow-sm">
+            <i data-lucide="user-plus" class="w-4 h-4 text-gold-400"></i>
+            <span>Encode New Member</span>
+          </button>
+
+          <button onclick="navigateTo('projector')" data-nav="projector" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left text-white bg-royal-950/50 backdrop-blur-md border border-white/10 hover:bg-royal-950/75 shadow-sm">
+            <i data-lucide="calculator" class="w-4 h-4 text-gold-400"></i>
+            <span>Comp Plan & Projector</span>
+          </button>
+
+          <button onclick="navigateTo('wallet')" data-nav="wallet" class="nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left text-white bg-royal-950/50 backdrop-blur-md border border-white/10 hover:bg-royal-950/75 shadow-sm">
+            <i data-lucide="wallet" class="w-4 h-4 text-gold-400"></i>
+            <span>E-Wallet & Encashment</span>
+          </button>
+
+          <button id="nav-admin-btn" onclick="navigateTo('admin')" data-nav="admin" class="nav-item hidden w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left text-white bg-royal-950/50 backdrop-blur-md border border-white/10 hover:bg-royal-950/75 shadow-sm">
+            <i data-lucide="shield-check" class="w-4 h-4 text-gold-400"></i>
+            <span>Admin & Database Controls</span>
+          </button>
+        </nav>
+      </div>
+
+      <!-- Sidebar Footer -->
+      <div class="relative z-10 p-4 border-t border-gold-500/25 bg-royal-950/60 backdrop-blur-md">
+        <button onclick="handleLogout()" class="w-full py-2.5 px-3 rounded-xl bg-rose-500/30 hover:bg-rose-500/45 border border-rose-400/50 text-xs font-bold text-rose-100 flex items-center justify-center gap-2 transition shadow-md">
+          <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+          Sign Out
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="flex-1 flex flex-col min-w-0">
+
+      <!-- TOP HEADER -->
+      <header class="sticky top-0 z-20 glass-card-strong border-b border-gold-500/25 px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <button onclick="toggleMobileSidebar(true)" class="lg:hidden p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+          <div>
+            <h1 id="page-title" class="font-serif text-lg sm:text-xl font-bold gold-text">Dashboard Overview</h1>
+            <p class="text-xs text-blue-200/80 hidden sm:block">Honoring Lives... Celebrating Memories... Forever in Our Hearts.</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3.5">
+          <!-- Enlarged Dashboard Trial Countdown Readout -->
+          <div id="header-timer-badge" class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-royal-900/95 border border-gold-500/45 shadow-md">
+            <i data-lucide="timer" class="w-4 h-4 text-gold-300 flex-shrink-0"></i>
+            <div class="leading-none">
+              <span class="block text-[9px] font-extrabold uppercase tracking-wider text-gold-300">Trial Expires In</span>
+              <span id="header-countdown-display" class="font-mono text-2xl sm:text-3xl font-black text-white">05:00</span>
+            </div>
+          </div>
+
+          <!-- Celestial Audio Chime Toggle -->
+          <button onclick="toggleCelestialAudio()" title="Toggle Celestial UI Chimes" class="p-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 hover:border-gold-400 text-gold-300 transition flex items-center gap-1.5 text-xs font-semibold">
+            <i data-lucide="volume-x" class="audio-status-icon w-4 h-4"></i>
+            <span class="audio-status-label hidden md:inline">Chimes: Off</span>
+          </button>
+
+          <div onclick="navigateTo('wallet')" class="cursor-pointer hidden sm:flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-royal-900/90 border border-gold-500/35 hover:border-gold-400 transition">
+            <i data-lucide="coins" class="w-4 h-4 text-gold-400"></i>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-slate-400 leading-none">E-Wallet Balance</p>
+              <p id="topbar-wallet-balance" class="text-sm font-extrabold text-gold-300 leading-tight mt-0.5">₱0.00</p>
+            </div>
+          </div>
+
+          <button onclick="navigateTo('encode')" class="px-3.5 py-2.5 rounded-xl gold-gradient gold-gradient-hover text-royal-950 font-extrabold text-xs sm:text-sm shadow-lg flex items-center gap-1.5 transition shimmer-overlay">
+            <i data-lucide="user-plus" class="w-4 h-4"></i>
+            <span>Encode Member</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- VIEWS CONTAINER -->
+      <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl w-full mx-auto space-y-6">
+
+        <!-- =============================================================== -->
+        <!-- VIEW 1: DASHBOARD OVERVIEW                                      -->
+        <!-- =============================================================== -->
+        <section id="view-overview" class="space-y-6">
+          
+          <!-- 4 Primary KPI Summary Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+            <div class="glass-card rounded-2xl p-5 gold-glow tilt-card animate-section-in stagger-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-gold-300">Available E-Wallet Balance</span>
+                <div class="w-9 h-9 rounded-xl gold-gradient text-royal-950 flex items-center justify-center">
+                  <i data-lucide="wallet" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <p id="kpi-available-wallet" class="text-2xl sm:text-3xl font-extrabold text-white mt-3">₱0.00</p>
+              <p class="text-xs text-slate-300 mt-1">Withdrawable commission balance</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 tilt-card animate-section-in stagger-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-blue-200">Total Commissions Earned</span>
+                <div class="w-9 h-9 rounded-xl bg-blue-500/25 border border-blue-400/30 text-gold-300 flex items-center justify-center">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <p id="kpi-total-earned" class="text-2xl sm:text-3xl font-extrabold text-gold-300 mt-3">₱0.00</p>
+              <p class="text-xs text-slate-300 mt-1">Cumulative across Levels 1–15</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 tilt-card animate-section-in stagger-3">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-blue-200">Direct Referrals (Level 1)</span>
+                <div class="w-9 h-9 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 flex items-center justify-center">
+                  <i data-lucide="user-check" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <p id="kpi-direct-count" class="text-2xl sm:text-3xl font-extrabold text-white mt-3">0</p>
+              <p id="kpi-direct-sub" class="text-xs text-slate-300 mt-1">0 Executive • 0 Standard</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-5 tilt-card animate-section-in stagger-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold uppercase tracking-wider text-blue-200">Total 15-Level Network</span>
+                <div class="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-400/30 text-purple-300 flex items-center justify-center">
+                  <i data-lucide="users" class="w-4 h-4"></i>
+                </div>
+              </div>
+              <p id="kpi-network-size" class="text-2xl sm:text-3xl font-extrabold text-white mt-3">0</p>
+              <p class="text-xs text-slate-300 mt-1">Active downlines in Generations 1–15</p>
+            </div>
+          </div>
+
+          <!-- One-Click Referral Link & Sponsor Code Copy Box -->
+          <div class="glass-card rounded-2xl p-5 border border-gold-500/40 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 tilt-card animate-section-in">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded-2xl gold-gradient text-royal-950 flex items-center justify-center flex-shrink-0 shimmer-overlay">
+                <i data-lucide="share-2" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-sm font-bold text-gold-300">Sponsor Referral Link & Code</h3>
+                  <span id="overview-ref-code-badge" class="px-2.5 py-0.5 rounded-md bg-royal-950 border border-gold-500/40 font-mono text-xs font-extrabold text-gold-300">TMS-ADMIN</span>
+                </div>
+                <p class="text-xs text-slate-300 mt-0.5">Share your link or referral code—new registrations auto-credit your 15-level unilevel tree.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap sm:flex-nowrap w-full lg:w-auto items-center gap-2">
+              <input id="referral-link-input" type="text" readonly class="flex-1 lg:w-80 px-3.5 py-2.5 rounded-xl bg-royal-950/90 border border-gold-500/35 text-xs text-gold-300 font-mono focus:outline-none" />
+              <button onclick="copyTextValue('referral-link-input', 'Referral link copied to clipboard!')" class="px-3.5 py-2.5 rounded-xl gold-gradient gold-gradient-hover text-royal-950 font-bold text-xs flex items-center gap-1.5 flex-shrink-0 shadow-md transition">
+                <i data-lucide="link" class="w-3.5 h-3.5"></i>
+                Copy Link
+              </button>
+              <button onclick="copyReferralCodeOnly()" class="px-3.5 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-gold-500/35 text-gold-300 font-bold text-xs flex items-center gap-1.5 flex-shrink-0 transition">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                Copy Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Level-by-Level Bar Chart & Recent Commission Feed -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-section-in">
+            <div class="lg:col-span-7 glass-card rounded-2xl p-5">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h3 class="font-serif text-base font-bold text-white">Level-by-Level Earnings (L1 – L15)</h3>
+                  <p class="text-xs text-slate-300">Real-time Philippine Peso (₱) commission earnings per unilevel tier</p>
+                </div>
+                <span class="px-2.5 py-1 rounded-lg bg-gold-500/15 border border-gold-500/30 text-xs font-semibold text-gold-300">Live Data</span>
+              </div>
+              <div class="h-72 w-full">
+                <canvas id="earningsByLevelChart"></canvas>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 glass-card rounded-2xl p-5 flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h3 class="font-serif text-base font-bold text-white">Recent Commission Feed</h3>
+                  <p class="text-xs text-slate-300">Live 15-level unilevel payouts</p>
+                </div>
+                <button onclick="navigateTo('wallet')" class="text-xs font-semibold text-gold-300 hover:underline">Full Ledger</button>
+              </div>
+              <div id="overview-activity-feed" class="flex-1 space-y-2.5 overflow-y-auto max-h-72">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 2: 15-LEVEL MATRIX & GENEALOGY TREE                        -->
+        <!-- =============================================================== -->
+        <section id="view-matrix" class="hidden space-y-6 animate-section-in">
+          <div class="glass-card rounded-2xl p-5 overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <h3 class="font-serif text-lg font-bold gold-text">15-Level Unilevel Breakdown</h3>
+                <p class="text-xs text-slate-300">Generation rates, active members per level, and total earned from each level</p>
+              </div>
+              <div class="px-3.5 py-1.5 rounded-xl bg-royal-950 border border-gold-500/35 text-xs">
+                Total Unilevel Earned: <strong id="matrix-total-earned" class="text-gold-300">₱0.00</strong>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="border-b border-gold-500/35 text-[11px] uppercase tracking-wider text-gold-300 bg-royal-950/75">
+                    <th class="py-3 px-4">Level #</th>
+                    <th class="py-3 px-4">₱12,000 Rate</th>
+                    <th class="py-3 px-4">₱6,000 Rate</th>
+                    <th class="py-3 px-4 text-center">Active Members in Level</th>
+                    <th class="py-3 px-4 text-right">Total Earned from Level</th>
+                  </tr>
+                </thead>
+                <tbody id="matrix-table-body" class="divide-y divide-white/10 text-sm">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Interactive Collapsible Genealogy Tree -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-8 glass-card rounded-2xl p-5">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                <div>
+                  <h3 class="font-serif text-base font-bold text-white">Interactive Collapsible Genealogy Tree</h3>
+                  <p class="text-xs text-slate-300">Expand or collapse downline branches across up to 15 generations</p>
+                </div>
+                <button onclick="expandAllTreeNodes()" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-semibold text-gold-300 transition">
+                  Expand All Branches
+                </button>
+              </div>
+              <div id="genealogy-tree-container" class="max-h-[500px] overflow-y-auto pr-2 space-y-2">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 glass-card-strong rounded-2xl p-5 border border-gold-500/40 h-fit sticky top-24 tilt-card">
+              <div class="flex items-center gap-2.5 pb-3 border-b border-white/10 mb-4">
+                <div class="w-9 h-9 rounded-xl gold-gradient text-royal-950 flex items-center justify-center">
+                  <i data-lucide="contact" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h4 class="font-serif text-sm font-bold text-gold-300">Associate Profile</h4>
+                  <p class="text-[11px] text-slate-400">Selected Genealogy Node</p>
+                </div>
+              </div>
+              <div id="member-inspector-body" class="space-y-3 text-sm">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 3: ENCODE NEW MEMBER                                       -->
+        <!-- =============================================================== -->
+        <section id="view-encode" class="hidden space-y-6 animate-section-in">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-7 glass-card-strong rounded-2xl p-6 border border-gold-500/35">
+              <div class="mb-5">
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-bold gold-gradient text-royal-950 uppercase">Direct Member Encoding</span>
+                <h3 class="font-serif text-xl font-bold text-white mt-2">Encode New Memorial Associate</h3>
+                <p class="text-xs text-slate-300 mt-1">Register a new member under your referral code or any valid downline referral code. Up to 15 upline levels are credited immediately.</p>
+              </div>
+
+              <form id="encode-member-form" onsubmit="handleDashboardEncode(event)" class="space-y-4">
+                <div>
+                  <label class="block text-xs font-semibold text-gold-300 mb-1.5">Sponsor Referral Code *</label>
+                  <input id="encode-sponsor-code" type="text" required oninput="updateEncodeCascadePreview()" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 text-sm text-white uppercase font-mono focus:outline-none focus:border-gold-400" />
+                  <p id="encode-sponsor-status" class="text-xs mt-1 text-emerald-400">Sponsor verified.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1.5">Full Name *</label>
+                    <input id="encode-fullname" type="text" required placeholder="Maria Clara Santos" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1.5">Username *</label>
+                    <input id="encode-username" type="text" required placeholder="mariaclara" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1.5">Email Address *</label>
+                    <input id="encode-email" type="email" required placeholder="maria@example.com" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-gold-300 mb-1.5">Mobile Number *</label>
+                    <input id="encode-mobile" type="tel" required placeholder="0918-000-0000" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-gold-300 mb-1.5">Account Password *</label>
+                  <input id="encode-password" type="password" required minlength="4" placeholder="Set member password" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/90 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                </div>
+
+                <div>
+                  <label class="block text-xs font-semibold text-gold-300 mb-2">Memorial Registration Package *</label>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <label class="cursor-pointer">
+                      <input type="radio" name="encode-package" value="12000" checked onchange="updateEncodeCascadePreview()" class="peer sr-only" />
+                      <div class="p-4 rounded-xl bg-royal-900/80 border-2 border-white/15 peer-checked:border-gold-400 peer-checked:bg-gold-500/15 transition tilt-card">
+                        <div class="flex items-center justify-between">
+                          <span class="font-bold text-sm text-white">Executive Memorial Plan</span>
+                          <span class="font-extrabold text-base text-gold-300">₱12,000</span>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-1">₱800 (L1–L3) • ₱500 (L4–L5) • ₱300 (L6–L8) • ₱150 (L9–L10) • ₱100 (L11–L13) • ₱50 (L14–L15)</p>
+                      </div>
+                    </label>
+
+                    <label class="cursor-pointer">
+                      <input type="radio" name="encode-package" value="6000" onchange="updateEncodeCascadePreview()" class="peer sr-only" />
+                      <div class="p-4 rounded-xl bg-royal-900/80 border-2 border-white/15 peer-checked:border-gold-400 peer-checked:bg-blue-500/20 transition tilt-card">
+                        <div class="flex items-center justify-between">
+                          <span class="font-bold text-sm text-white">Standard Memorial Plan</span>
+                          <span class="font-extrabold text-base text-blue-300">₱6,000</span>
+                        </div>
+                        <p class="text-xs text-slate-300 mt-1">₱400 (L1–L3) • ₱250 (L4–L6) • ₱150 (L7–L9) • ₱75 (L10–L12) • ₱50 (L13–L14) • ₱25 (L15)</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-xl gold-gradient gold-gradient-hover text-royal-950 font-extrabold text-sm uppercase tracking-wider shadow-xl transition flex items-center justify-center gap-2 shimmer-overlay">
+                  <i data-lucide="check-circle" class="w-4 h-4"></i>
+                  Register Associate & Distribute 15-Level Commissions
+                </button>
+              </form>
+            </div>
+
+            <!-- Live 15-Level Upline Payout Preview -->
+            <div class="lg:col-span-5 glass-card rounded-2xl p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+                  <div>
+                    <h4 class="font-serif text-base font-bold text-gold-300">15-Level Payout Preview</h4>
+                    <p class="text-xs text-slate-300">Upline recipients credited upon encoding</p>
+                  </div>
+                  <span id="cascade-total-badge" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-xs font-bold text-emerald-300">₱0</span>
+                </div>
+                <div id="encode-cascade-list" class="space-y-2 max-h-[430px] overflow-y-auto pr-1">
+                  <!-- Populated dynamically -->
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/10 text-[11px] text-slate-400">
+                Commissions automatically cascade from Level 1 (Direct Sponsor) up to Level 15.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 4: COMPENSATION PLAN & INCOME PROJECTOR                    -->
+        <!-- =============================================================== -->
+        <section id="view-projector" class="hidden space-y-6 animate-section-in">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <div class="lg:col-span-5 glass-card rounded-2xl p-5">
+              <div class="mb-4">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold gold-gradient text-royal-950 uppercase">Official Compensation Plan</span>
+                <h3 class="font-serif text-lg font-bold text-white mt-1.5">15-Level Unilevel Payout Schedule</h3>
+                <p class="text-xs text-slate-300">Side-by-side commission table for ₱12,000 and ₱6,000 plans</p>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                  <thead>
+                    <tr class="bg-royal-950 border-b border-gold-500/35 text-gold-300 uppercase text-[11px]">
+                      <th class="py-2.5 px-3">Level</th>
+                      <th class="py-2.5 px-3 text-right">₱12,000 Executive</th>
+                      <th class="py-2.5 px-3 text-right">₱6,000 Standard</th>
+                    </tr>
+                  </thead>
+                  <tbody id="official-rates-tbody" class="divide-y divide-white/10">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                  <tfoot>
+                    <tr class="bg-gold-500/15 border-t-2 border-gold-500/40 font-extrabold text-gold-300">
+                      <td class="py-3 px-3">Total 15-Level Payout</td>
+                      <td class="py-3 px-3 text-right">₱5,000.00</td>
+                      <td class="py-3 px-3 text-right">₱2,750.00</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <div class="lg:col-span-7 glass-card-strong rounded-2xl p-6 border border-gold-500/35 space-y-5">
+              <div>
+                <h3 class="font-serif text-lg font-bold gold-text">15-Level Duplication Income Projector</h3>
+                <p class="text-xs text-slate-300">Calculate potential unilevel earnings across 15 generations based on average duplication and plan mix.</p>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl bg-royal-950/75 border border-gold-500/25">
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-2">
+                    <span class="text-blue-200">Avg. Referrals per Member:</span>
+                    <span id="sim-duplication-val" class="text-gold-300 font-extrabold text-sm">3 Referrals</span>
+                  </div>
+                  <input id="sim-duplication-slider" type="range" min="2" max="5" value="3" oninput="runIncomeProjector()" class="w-full" />
+                  <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-xs font-semibold mb-2">
+                    <span class="text-blue-200">Package Ratio (₱12k / ₱6k):</span>
+                    <span id="sim-mix-val" class="text-gold-300 font-extrabold text-sm">50% / 50%</span>
+                  </div>
+                  <input id="sim-mix-slider" type="range" min="0" max="100" step="10" value="50" oninput="runIncomeProjector()" class="w-full" />
+                  <div class="flex justify-between text-[10px] text-slate-400 mt-1">
+                    <span>100% ₱6k</span>
+                    <span>50/50</span>
+                    <span>100% ₱12k</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 rounded-2xl bg-royal-900/80 border border-blue-400/25 tilt-card">
+                  <p class="text-xs text-slate-300">Projected 15-Level Team</p>
+                  <p id="sim-total-team" class="text-xl sm:text-2xl font-extrabold text-white mt-1">0</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-gold-500/15 border border-gold-500/40 tilt-card">
+                  <p class="text-xs text-gold-300">Projected Cumulative Income</p>
+                  <p id="sim-total-income" class="text-xl sm:text-2xl font-extrabold text-gold-300 mt-1">₱0.00</p>
+                </div>
+              </div>
+
+              <div class="max-h-80 overflow-y-auto rounded-xl border border-white/10">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead class="sticky top-0 bg-royal-950 text-gold-300 uppercase border-b border-gold-500/35">
+                    <tr>
+                      <th class="py-2.5 px-3">Level</th>
+                      <th class="py-2.5 px-3 text-right">Projected Members</th>
+                      <th class="py-2.5 px-3 text-right">Avg Rate</th>
+                      <th class="py-2.5 px-3 text-right">Projected Earnings</th>
+                    </tr>
+                  </thead>
+                  <tbody id="sim-results-tbody" class="divide-y divide-white/10">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 5: E-WALLET & ENCASHMENT                                   -->
+        <!-- =============================================================== -->
+        <section id="view-wallet" class="hidden space-y-6 animate-section-in">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Withdrawal Request Card -->
+            <div class="lg:col-span-5 glass-card-strong rounded-2xl p-6 border border-gold-500/35 space-y-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs uppercase tracking-wider text-gold-300 font-semibold">Available E-Wallet Balance</p>
+                  <h3 id="wallet-page-balance" class="text-3xl font-extrabold text-white mt-1">₱0.00</h3>
+                </div>
+                <div class="w-12 h-12 rounded-2xl gold-gradient text-royal-950 flex items-center justify-center shadow-lg shimmer-overlay">
+                  <i data-lucide="banknote" class="w-6 h-6"></i>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 pt-2 border-t border-white/10 text-xs">
+                <div>
+                  <span class="text-slate-400">Total Earned:</span>
+                  <p id="wallet-page-earned" class="font-bold text-emerald-400 text-sm mt-0.5">₱0.00</p>
+                </div>
+                <div>
+                  <span class="text-slate-400">Encashed / Pending:</span>
+                  <p id="wallet-page-withdrawn" class="font-bold text-blue-300 text-sm mt-0.5">₱0.00</p>
+                </div>
+              </div>
+
+              <form onsubmit="handleWithdrawalRequest(event)" class="space-y-3 pt-3 border-t border-white/10">
+                <h4 class="font-serif text-sm font-bold text-gold-300">Submit Encashment Request</h4>
+                
+                <div>
+                  <label class="block text-xs text-slate-300 mb-1">Disbursement Channel *</label>
+                  <select id="withdraw-method" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/95 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400">
+                    <option value="GCash">GCash</option>
+                    <option value="Maya">Maya</option>
+                    <option value="BDO">BDO</option>
+                    <option value="BPI">BPI</option>
+                    <option value="UnionBank">UnionBank</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-xs text-slate-300 mb-1">Account Name *</label>
+                  <input id="withdraw-account-name" type="text" required placeholder="Juan Dela Cruz" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/95 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                </div>
+
+                <div>
+                  <label class="block text-xs text-slate-300 mb-1">Account / Mobile Number *</label>
+                  <input id="withdraw-account-number" type="text" required placeholder="09171234567 or Account No." class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/95 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                </div>
+
+                <div>
+                  <label class="block text-xs text-slate-300 mb-1">Withdrawal Amount (PHP ₱) — Min ₱500 *</label>
+                  <input id="withdraw-amount" type="number" min="500" step="1" required placeholder="500" class="w-full px-3.5 py-2.5 rounded-xl bg-royal-900/95 border border-gold-500/35 text-sm text-white focus:outline-none focus:border-gold-400" />
+                </div>
+
+                <button type="submit" class="w-full py-3 rounded-xl gold-gradient gold-gradient-hover text-royal-950 font-extrabold text-xs uppercase tracking-wider shadow-lg transition shimmer-overlay">
+                  Request Encashment
+                </button>
+              </form>
+            </div>
+
+            <!-- Withdrawal History Table -->
+            <div class="lg:col-span-7 glass-card rounded-2xl p-6 flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <div>
+                  <h3 class="font-serif text-base font-bold text-white">Withdrawal & Encashment Ledger</h3>
+                  <p class="text-xs text-slate-300">Auditable record of all disbursement requests</p>
+                </div>
+              </div>
+
+              <div class="overflow-x-auto flex-1">
+                <table class="w-full text-left border-collapse text-xs">
+                  <thead>
+                    <tr class="border-b border-gold-500/35 text-gold-300 uppercase bg-royal-950/75">
+                      <th class="py-2.5 px-3">Date & ID</th>
+                      <th class="py-2.5 px-3">Associate</th>
+                      <th class="py-2.5 px-3">Channel & Account</th>
+                      <th class="py-2.5 px-3 text-right">Amount</th>
+                      <th class="py-2.5 px-3 text-center">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="payout-requests-tbody" class="divide-y divide-white/10">
+                    <!-- Populated dynamically -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Searchable Commission Ledger -->
+          <div class="glass-card rounded-2xl p-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+              <div>
+                <h3 class="font-serif text-base font-bold text-white">15-Level Commission Audit Ledger</h3>
+                <p class="text-xs text-slate-300">Complete transaction history of every unilevel bonus credited</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <input id="ledger-search" type="text" oninput="renderWalletAndLedger()" placeholder="Search associate name or code..." class="px-3 py-2 rounded-xl bg-royal-950/90 border border-gold-500/35 text-xs text-white focus:outline-none focus:border-gold-400" />
+                <select id="ledger-level-filter" onchange="renderWalletAndLedger()" class="px-3 py-2 rounded-xl bg-royal-950/90 border border-gold-500/35 text-xs text-white focus:outline-none focus:border-gold-400">
+                  <option value="all">All Levels (1–15)</option>
+                  <option value="1">Level 1</option>
+                  <option value="2">Level 2</option>
+                  <option value="3">Level 3</option>
+                  <option value="4">Level 4</option>
+                  <option value="5">Level 5</option>
+                  <option value="6">Level 6</option>
+                  <option value="7">Level 7</option>
+                  <option value="8">Level 8</option>
+                  <option value="9">Level 9</option>
+                  <option value="10">Level 10</option>
+                  <option value="11">Level 11</option>
+                  <option value="12">Level 12</option>
+                  <option value="13">Level 13</option>
+                  <option value="14">Level 14</option>
+                  <option value="15">Level 15</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="overflow-x-auto max-h-96">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead class="sticky top-0 bg-royal-950 text-gold-300 uppercase border-b border-gold-500/35">
+                  <tr>
+                    <th class="py-3 px-3">Date & Time</th>
+                    <th class="py-3 px-3">Enrolled Associate</th>
+                    <th class="py-3 px-3">Package</th>
+                    <th class="py-3 px-3 text-center">Level</th>
+                    <th class="py-3 px-3 text-right">Commission</th>
+                  </tr>
+                </thead>
+                <tbody id="commission-ledger-tbody" class="divide-y divide-white/10">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================== -->
+        <!-- VIEW 6: ADMIN MANAGEMENT & DATABASE CONTROLS (ADMIN ONLY)       -->
+        <!-- =============================================================== -->
+        <section id="view-admin" class="hidden space-y-6 animate-section-in">
+          
+          <!-- Database Backup, Restore & Factory Reset -->
+          <div class="glass-card-strong rounded-2xl p-6 border border-gold-500/40">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold gold-gradient text-royal-950 uppercase">Master Admin Controls</span>
+                <h3 class="font-serif text-lg font-bold text-white mt-1.5">Database Backup, Restore & Factory Reset</h3>
+                <p class="text-xs text-slate-300">Export your live production database to JSON, restore from a backup file, or factory reset to clean initial state.</p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-2.5">
+                <button onclick="exportDatabaseJSON()" class="px-4 py-2.5 rounded-xl gold-gradient gold-gradient-hover text-royal-950 font-extrabold text-xs flex items-center gap-1.5 shadow-lg transition">
+                  <i data-lucide="download" class="w-4 h-4"></i>
+                  Export JSON Backup
+                </button>
+
+                <label class="cursor-pointer px-4 py-2.5 rounded-xl bg-blue-500/25 hover:bg-blue-500/35 border border-blue-400/40 text-blue-200 font-bold text-xs flex items-center gap-1.5 transition">
+                  <i data-lucide="upload" class="w-4 h-4"></i>
+                  Import JSON Backup
+                  <input id="import-json-input" type="file" accept=".json,application/json" onchange="importDatabaseJSON(event)" class="hidden" />
+                </label>
+
+                <button onclick="confirmFactoryReset()" class="px-4 py-2.5 rounded-xl bg-rose-500/20 hover:bg-rose-500/30 border border-rose-400/40 text-rose-200 font-bold text-xs flex items-center gap-1.5 transition">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  Factory Reset System
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pending Encashment Approval Queue -->
+          <div class="glass-card rounded-2xl p-5">
+            <div class="mb-4">
+              <h3 class="font-serif text-base font-bold text-gold-300">Encashment Approval Queue</h3>
+              <p class="text-xs text-slate-300">Approve or reject member withdrawal requests (rejected requests automatically refund the member's e-wallet)</p>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="border-b border-gold-500/35 text-gold-300 uppercase bg-royal-950/75">
+                    <th class="py-2.5 px-3">Date & ID</th>
+                    <th class="py-2.5 px-3">Associate</th>
+                    <th class="py-2.5 px-3">Channel & Account Details</th>
+                    <th class="py-2.5 px-3 text-right">Amount</th>
+                    <th class="py-2.5 px-3 text-center">Status</th>
+                    <th class="py-2.5 px-3 text-right">Admin Action</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-withdrawals-tbody" class="divide-y divide-white/10">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Complete Registered Members Directory -->
+          <div class="glass-card rounded-2xl p-5">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+              <div>
+                <h3 class="font-serif text-base font-bold text-white">Registered Members Directory</h3>
+                <p class="text-xs text-slate-300">All active accounts in the production database</p>
+              </div>
+              <span id="admin-total-members-badge" class="px-3 py-1 rounded-lg bg-royal-950 border border-gold-500/35 text-xs font-bold text-gold-300">1 Registered Account</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="border-b border-gold-500/35 text-gold-300 uppercase bg-royal-950/75">
+                    <th class="py-2.5 px-3">Referral Code</th>
+                    <th class="py-2.5 px-3">Full Name & Username</th>
+                    <th class="py-2.5 px-3">Email & Mobile</th>
+                    <th class="py-2.5 px-3">Sponsor Code</th>
+                    <th class="py-2.5 px-3">Package</th>
+                    <th class="py-2.5 px-3 text-right">Wallet Balance</th>
+                    <th class="py-2.5 px-3 text-right">Total Earned</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-members-tbody" class="divide-y divide-white/10">
+                  <!-- Populated dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PRODUCTION APPLICATION & IMMERSIVE ANIMATION ENGINE                   -->
+  <!-- ===================================================================== -->
+  <script>
+    // =========================================================================
+    // 0. BACKDROP MODE, 3D TILT, COUNTERS & WEB AUDIO CHIMES
+    // =========================================================================
+    function setAuthBackdropMode(isAuthVisible) {
+      const img = document.getElementById('global-backdrop-img');
+      const dashTint = document.getElementById('dashboard-backdrop-tint');
+      if (!img || !dashTint) return;
+      img.style.opacity = '0.94';
+      if (isAuthVisible) {
+        dashTint.classList.remove('opacity-100');
+        dashTint.classList.add('opacity-0');
+      } else {
+        dashTint.classList.remove('opacity-0');
+        dashTint.classList.add('opacity-100');
+      }
+    }
+
+    let audioEnabled = false;
+    let audioCtx = null;
+
+    function toggleCelestialAudio() {
+      audioEnabled = !audioEnabled;
+      if (audioEnabled && !audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioEnabled && audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      document.querySelectorAll('.audio-status-icon').forEach(icon => {
+        icon.setAttribute('data-lucide', audioEnabled ? 'volume-2' : 'volume-x');
+      });
+      document.querySelectorAll('.audio-status-label').forEach(lbl => {
+        lbl.textContent = audioEnabled ? 'Chimes: On' : 'Chimes: Off';
+      });
+      lucide.createIcons();
+
+      if (audioEnabled) {
+        playCelestialChime(523.25, 0.45);
+        showToast('Celestial harmonic chimes enabled.');
+      }
+    }
+
+    function playCelestialChime(freq = 587.33, duration = 0.5) {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const oscHarmonic = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+
+        oscHarmonic.type = 'triangle';
+        oscHarmonic.frequency.setValueAtTime(freq * 1.5, now);
+
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.exponentialRampToValueAtTime(0.055, now + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+
+        osc.connect(gain);
+        oscHarmonic.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        oscHarmonic.start(now);
+        osc.stop(now + duration);
+        oscHarmonic.stop(now + duration);
+      } catch (e) {
+        // Ignore browser audio policy restrictions
+      }
+    }
+
+    function initInteractiveTiltCards() {
+      document.addEventListener('mousemove', (e) => {
+        const card = e.target.closest('.tilt-card');
+        if (!card) return;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--spot-x', `${x}px`);
+        card.style.setProperty('--spot-y', `${y}px`);
+
+        const rotateY = ((x / rect.width) - 0.5) * 4.5;
+        const rotateX = (0.5 - (y / rect.height)) * 4.5;
+        card.style.transform = `perspective(950px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+      });
+
+      document.addEventListener('mouseout', (e) => {
+        const card = e.target.closest('.tilt-card');
+        if (card && !card.contains(e.relatedTarget)) {
+          card.style.transform = 'perspective(950px) rotateX(0deg) rotateY(0deg)';
+        }
+      });
+    }
+
+    const counterValues = {};
+    function animateValue(elId, targetValue, isCurrency = true) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      const startValue = counterValues[elId] ?? 0;
+      counterValues[elId] = targetValue;
+
+      if (startValue === targetValue) {
+        el.textContent = isCurrency ? formatPHP(targetValue) : Math.round(targetValue).toLocaleString('en-PH');
+        return;
+      }
+
+      const duration = 650;
+      const startTime = performance.now();
+
+      function tick(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = startValue + (targetValue - startValue) * eased;
+
+        el.textContent = isCurrency
+          ? formatPHP(current)
+          : Math.round(current).toLocaleString('en-PH');
+
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = isCurrency
+            ? formatPHP(targetValue)
+            : Math.round(targetValue).toLocaleString('en-PH');
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+
+    // =========================================================================
+    // 1. EXACT 15-LEVEL UNILEVEL COMPENSATION RATES (PHILIPPINE PESOS)
+    // =========================================================================
+    const COMPENSATION_RATES = {
+      12000: {
+        1: 800, 2: 800, 3: 800,
+        4: 500, 5: 500,
+        6: 300, 7: 300, 8: 300,
+        9: 150, 10: 150,
+        11: 100, 12: 100, 13: 100,
+        14: 50, 15: 50
+      },
+      6000: {
+        1: 400, 2: 400, 3: 400,
+        4: 250, 5: 250, 6: 250,
+        7: 150, 8: 150, 9: 150,
+        10: 75, 11: 75, 12: 75,
+        13: 50, 14: 50,
+        15: 25
+      }
+    };
+
+    const DB_KEY = 'tms_unilevel_production_db_v1';
+    const SESSION_KEY = 'tms_unilevel_production_session_v1';
+    const EXPIRATION_TS_KEY = 'tms_system_expiration_ts_v1';
+    const PERMANENT_LOCK_KEY = 'tms_system_permanently_expired_v1';
+    const SYSTEM_WINDOW_MS = 5 * 60 * 1000; // 5 minutes (300,000 ms)
+
+    let systemExpirationInterval = null;
+    let isSystemLocked = false;
+
+    let db = {
+      members: [],
+      commissions: [],
+      withdrawals: []
+    };
+
+    let activeUsername = null;
+    let selectedTreeCode = null;
+    let expandedCodes = new Set(['TMS-ADMIN']);
+    let earningsChartInstance = null;
+
+    // =========================================================================
+    // 2. CLEAN INITIAL PRODUCTION DATABASE (ONLY ROOT MASTER ADMIN)
+    // =========================================================================
+    function createInitialProductionDB() {
+      return {
+        members: [
+          {
+            username: 'admin',
+            password: '123456',
+            fullName: 'Tangkilikan Master Admin',
+            email: 'admin@tangkilikanmemorial.ph',
+            mobile: '0900-000-0000',
+            referralCode: 'TMS-ADMIN',
+            sponsorCode: null,
+            packageName: 'Master Executive',
+            packageAmount: 12000,
+            role: 'admin',
+            walletBalance: 0,
+            totalEarned: 0,
+            createdAt: new Date().toLocaleString('en-US', {
+              year: 'numeric', month: '2-digit', day: '2-digit',
+              hour: '2-digit', minute: '2-digit'
+            })
+          }
+        ],
+        commissions: [],
+        withdrawals: []
+      };
+    }
+
+    function loadDB() {
+      try {
+        const raw = localStorage.getItem(DB_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (parsed && Array.isArray(parsed.members) && parsed.members.length > 0) {
+            db = parsed;
+            return;
+          }
+        }
+      } catch (e) {
+        console.error('Database load error:', e);
+      }
+      db = createInitialProductionDB();
+      saveDB();
+    }
+
+    // =========================================================================
+    // 2B. PERSISTENT 5-MINUTE EXPIRATION & PERMANENT LOCKOUT ENGINE
+    // =========================================================================
+    function formatMMSS(ms) {
+      const totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    function isSystemExpired() {
+      if (isSystemLocked || localStorage.getItem(PERMANENT_LOCK_KEY) === 'true') return true;
+      const expirationTs = Number(localStorage.getItem(EXPIRATION_TS_KEY));
+      if (expirationTs && Date.now() >= expirationTs) {
+        enforcePermanentSystemLockout();
+        return true;
+      }
+      return false;
+    }
+
+    function initPersistentExpirationTimer() {
+      // Check if already permanently locked
+      if (localStorage.getItem(PERMANENT_LOCK_KEY) === 'true') {
+        enforcePermanentSystemLockout();
+        return;
+      }
+
+      let expirationTs = Number(localStorage.getItem(EXPIRATION_TS_KEY));
+      if (!expirationTs || isNaN(expirationTs)) {
+        expirationTs = Date.now() + SYSTEM_WINDOW_MS;
+        localStorage.setItem(EXPIRATION_TS_KEY, String(expirationTs));
+      }
+
+      const tickExpiration = () => {
+        if (localStorage.getItem(PERMANENT_LOCK_KEY) === 'true') {
+          enforcePermanentSystemLockout();
+          return;
+        }
+
+        const remainingMs = expirationTs - Date.now();
+        if (remainingMs <= 0) {
+          updateCountdownBadges(0);
+          enforcePermanentSystemLockout();
+          return;
+        }
+
+        updateCountdownBadges(remainingMs);
+      };
+
+      tickExpiration();
+      systemExpirationInterval = setInterval(tickExpiration, 250);
+    }
+
+    function updateCountdownBadges(remainingMs) {
+      const formatted = formatMMSS(remainingMs);
+      const isUrgent = remainingMs <= 60000; // Final 60 seconds (<= 01:00)
+
+      const authTimer = document.getElementById('auth-countdown-timer');
+      const headDisp = document.getElementById('header-countdown-display');
+      const headBadge = document.getElementById('header-timer-badge');
+
+      if (authTimer) {
+        authTimer.textContent = formatted;
+      }
+      if (headDisp) {
+        headDisp.textContent = formatted;
+      }
+
+      if (isUrgent) {
+        if (authTimer) authTimer.classList.add('countdown-crimson-alert');
+        if (headDisp) {
+          headDisp.classList.remove('text-white');
+          headDisp.classList.add('text-rose-400', 'animate-pulse');
+        }
+        if (headBadge) {
+          headBadge.classList.remove('border-gold-500/45');
+          headBadge.classList.add('border-rose-500/70');
+        }
+      }
+    }
+
+    function enforcePermanentSystemLockout() {
+      isSystemLocked = true;
+      localStorage.setItem(PERMANENT_LOCK_KEY, 'true');
+
+      if (systemExpirationInterval) {
+        clearInterval(systemExpirationInterval);
+        systemExpirationInterval = null;
+      }
+
+      // Immediately log out any active user and clear session
+      activeUsername = null;
+      localStorage.removeItem(SESSION_KEY);
+
+      // Hide both auth screen and dashboard screen
+      const authScreen = document.getElementById('auth-screen');
+      const dashScreen = document.getElementById('dashboard-screen');
+      const confirmModal = document.getElementById('confirm-modal');
+      const cascadeModal = document.getElementById('cascade-modal');
+
+      if (authScreen) authScreen.classList.add('hidden');
+      if (dashScreen) dashScreen.classList.add('hidden');
+      if (confirmModal) confirmModal.classList.add('hidden');
+      if (cascadeModal) cascadeModal.classList.add('hidden');
+
+      // Disable all interactive form controls across the document
+      document.querySelectorAll('input, button, select, textarea').forEach(el => {
+        el.disabled = true;
+      });
+
+      // Format exact expiration timestamp
+      const expTs = Number(localStorage.getItem(EXPIRATION_TS_KEY)) || Date.now();
+      const expFormatted = new Date(expTs).toLocaleString('en-US', {
+        year: 'numeric', month: 'short', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit'
+      });
+      const tsEl = document.getElementById('expired-timestamp-label');
+      if (tsEl) tsEl.textContent = `Locked permanently on ${expFormatted}`;
+
+      // Show uncloseable permanent lockout screen
+      const expiredScreen = document.getElementById('system-expired-screen');
+      if (expiredScreen) {
+        expiredScreen.classList.remove('hidden');
+        expiredScreen.classList.add('flex');
+      }
+
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+    }
+
+    function guardSystemUnlocked() {
+      if (isSystemExpired()) {
+        enforcePermanentSystemLockout();
+        return false;
+      }
+      return true;
+    }
+
+    function guardSystemActive() {
+      return guardSystemUnlocked();
+    }
+
+    function saveDB() {
+      try {
+        localStorage.setItem(DB_KEY, JSON.stringify(db));
+      } catch (e) {
+        console.error('Database save error:', e);
+      }
+    }
+
+    function generateUniqueReferralCode() {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+      let code = '';
+      do {
+        let suffix = '';
+        for (let i = 0; i < 6; i++) {
+          suffix += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        code = 'TMS-' + suffix;
+      } while (db.members.some(m => m.referralCode === code));
+      return code;
+    }
+
+    function getCurrentUser() {
+      return db.members.find(m => m.username === activeUsername) || null;
+    }
+
+    // =========================================================================
+    // 3. FORMATTING, TOASTS & MODAL HELPERS
+    // =========================================================================
+    function formatPHP(val) {
+      return '₱' + Number(val || 0).toLocaleString('en-PH', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function formatPHPWhole(val) {
+      return '₱' + Number(val || 0).toLocaleString('en-PH');
+    }
+
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const style = type === 'error'
+        ? 'border-rose-400/60 bg-rose-950/95'
+        : 'border-gold-400/60 bg-royal-900/95';
+      const icon = type === 'error' ? 'alert-circle' : 'check-circle-2';
+      const iconColor = type === 'error' ? 'text-rose-400' : 'text-gold-300';
+
+      toast.className = `pointer-events-auto flex items-start gap-3 p-4 rounded-2xl border ${style} shadow-2xl backdrop-blur-md text-white text-xs sm:text-sm transition-all duration-300`;
+      toast.innerHTML = `
+        <i data-lucide="${icon}" class="w-5 h-5 ${iconColor} flex-shrink-0 mt-0.5"></i>
+        <div class="flex-1 leading-snug">${message}</div>
+      `;
+      container.appendChild(toast);
+      lucide.createIcons();
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-8px)';
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+
+    function showConfirmModal(title, message, onConfirm) {
+      const modal = document.getElementById('confirm-modal');
+      document.getElementById('confirm-title').textContent = title;
+      document.getElementById('confirm-message').textContent = message;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      const cancelBtn = document.getElementById('confirm-cancel-btn');
+      const okBtn = document.getElementById('confirm-ok-btn');
+
+      const close = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      };
+
+      cancelBtn.onclick = close;
+      okBtn.onclick = () => {
+        close();
+        onConfirm();
+      };
+    }
+
+    function copyTextValue(inputId, msg) {
+      const el = document.getElementById(inputId);
+      if (!el) return;
+      el.select();
+      el.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      showToast(msg);
+    }
+
+    function copyReferralCodeOnly() {
+      const user = getCurrentUser();
+      if (!user) return;
+      const temp = document.createElement('input');
+      temp.value = user.referralCode;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      showToast(`Sponsor Referral Code (${user.referralCode}) copied!`);
+    }
+
+    // =========================================================================
+    // 4. AUTHENTICATION (LOGIN & SIGN UP)
+    // =========================================================================
+    function switchAuthTab(tab) {
+      const loginForm = document.getElementById('login-form');
+      const signupForm = document.getElementById('signup-form');
+      const loginBtn = document.getElementById('tab-login-btn');
+      const signupBtn = document.getElementById('tab-signup-btn');
+
+      if (tab === 'login') {
+        loginForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+        loginBtn.className = 'py-2.5 px-4 rounded-xl text-sm font-bold transition auth-glass-tab-active';
+        signupBtn.className = 'py-2.5 px-4 rounded-xl text-sm font-bold transition text-slate-200 hover:text-white hover:bg-white/10';
+      } else {
+        loginForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+        signupBtn.className = 'py-2.5 px-4 rounded-xl text-sm font-bold transition auth-glass-tab-active';
+        loginBtn.className = 'py-2.5 px-4 rounded-xl text-sm font-bold transition text-slate-200 hover:text-white hover:bg-white/10';
+        validateSignupSponsorCode();
+      }
+    }
+
+    function validateSignupSponsorCode() {
+      const input = document.getElementById('signup-sponsor-code');
+      const feedback = document.getElementById('signup-sponsor-feedback');
+      const code = input.value.trim().toUpperCase();
+      const sponsor = db.members.find(m => m.referralCode === code);
+      if (sponsor) {
+        feedback.className = 'text-[11px] text-emerald-300 mt-1.5';
+        feedback.textContent = `Sponsor verified: ${sponsor.fullName} (${sponsor.referralCode})`;
+      } else {
+        feedback.className = 'text-[11px] text-rose-300 mt-1.5';
+        feedback.textContent = 'Invalid Sponsor Referral Code. Enter a valid code (e.g. TMS-ADMIN).';
+      }
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      if (!guardSystemActive()) return;
+      const username = document.getElementById('login-username').value.trim().toLowerCase();
+      const password = document.getElementById('login-password').value;
+
+      const member = db.members.find(m => m.username === username && m.password === password);
+      if (!member) {
+        showToast('Invalid username or password. Please verify your credentials.', 'error');
+        return;
+      }
+
+      activeUsername = member.username;
+      localStorage.setItem(SESSION_KEY, activeUsername);
+      playCelestialChime(587.33, 0.5);
+      showToast(`Welcome back, ${member.fullName}!`);
+      enterDashboard();
+    }
+
+    function handleSignup(e) {
+      e.preventDefault();
+      if (!guardSystemActive()) return;
+      const sponsorCode = document.getElementById('signup-sponsor-code').value.trim().toUpperCase();
+      const fullName = document.getElementById('signup-fullname').value.trim();
+      const username = document.getElementById('signup-username').value.trim().toLowerCase();
+      const email = document.getElementById('signup-email').value.trim();
+      const mobile = document.getElementById('signup-mobile').value.trim();
+      const password = document.getElementById('signup-password').value;
+      const packageAmount = Number(document.querySelector('input[name="signup-package"]:checked').value);
+
+      const sponsor = db.members.find(m => m.referralCode === sponsorCode);
+      if (!sponsor) {
+        showToast('Please enter a valid Sponsor Referral Code.', 'error');
+        return;
+      }
+
+      if (!/^[a-z0-9_.-]{3,24}$/.test(username)) {
+        showToast('Username must be 3–24 characters (letters, numbers, dots, underscores).', 'error');
+        return;
+      }
+
+      if (db.members.some(m => m.username === username)) {
+        showToast('Username is already taken. Choose another username.', 'error');
+        return;
+      }
+
+      const { newMember, payouts } = enrollMemberAndDistribute({
+        fullName, username, email, mobile, password, sponsorCode, packageAmount
+      });
+
+      activeUsername = newMember.username;
+      localStorage.setItem(SESSION_KEY, activeUsername);
+      e.target.reset();
+      document.getElementById('signup-sponsor-code').value = 'TMS-ADMIN';
+
+      enterDashboard();
+      showCascadeModal(newMember, payouts);
+    }
+
+    function handleLogout() {
+      activeUsername = null;
+      localStorage.removeItem(SESSION_KEY);
+      document.getElementById('dashboard-screen').classList.add('hidden');
+      document.getElementById('auth-screen').classList.remove('hidden');
+      setAuthBackdropMode(true);
+      showToast('Signed out securely.');
+    }
+
+    // =========================================================================
+    // 5. 15-LEVEL UNILEVEL COMMISSION ENGINE
+    // =========================================================================
+    function enrollMemberAndDistribute({ fullName, username, email, mobile, password, sponsorCode, packageAmount }) {
+      const rateTable = COMPENSATION_RATES[packageAmount];
+      const newCode = generateUniqueReferralCode();
+      const timestamp = new Date().toLocaleString('en-US', {
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit'
+      });
+
+      const newMember = {
+        username: username.toLowerCase(),
+        password,
+        fullName,
+        email,
+        mobile,
+        referralCode: newCode,
+        sponsorCode: sponsorCode.toUpperCase(),
+        packageName: packageAmount === 12000 ? 'Executive Memorial Plan' : 'Standard Memorial Plan',
+        packageAmount: Number(packageAmount),
+        role: 'member',
+        walletBalance: 0,
+        totalEarned: 0,
+        createdAt: timestamp
+      };
+
+      db.members.push(newMember);
+
+      const payouts = [];
+      let currentSponsorCode = newMember.sponsorCode;
+      let level = 1;
+
+      while (currentSponsorCode && level <= 15) {
+        const upline = db.members.find(m => m.referralCode === currentSponsorCode);
+        if (!upline) break;
+
+        const commissionAmount = rateTable[level] || 0;
+        if (commissionAmount > 0) {
+          upline.walletBalance = Number(upline.walletBalance || 0) + commissionAmount;
+          upline.totalEarned = Number(upline.totalEarned || 0) + commissionAmount;
+
+          db.commissions.unshift({
+            id: 'COM-' + Date.now() + '-' + level + '-' + Math.floor(Math.random() * 1000),
+            beneficiaryUsername: upline.username,
+            beneficiaryCode: upline.referralCode,
+            fromFullName: newMember.fullName,
+            fromUsername: newMember.username,
+            fromCode: newMember.referralCode,
+            packageAmount: newMember.packageAmount,
+            level,
+            amount: commissionAmount,
+            createdAt: timestamp
+          });
+
+          payouts.push({ upline, level, amount: commissionAmount });
+        }
+
+        currentSponsorCode = upline.sponsorCode;
+        level++;
+      }
+
+      saveDB();
+      return { newMember, payouts };
+    }
+
+    function showCascadeModal(newMember, payouts) {
+      const modal = document.getElementById('cascade-modal');
+      const stepsEl = document.getElementById('cascade-modal-steps');
+      const subtitleEl = document.getElementById('cascade-modal-subtitle');
+      const totalEl = document.getElementById('cascade-modal-total');
+
+      subtitleEl.textContent = `New Associate: ${newMember.fullName} (${newMember.referralCode}) • ${formatPHPWhole(newMember.packageAmount)} Plan`;
+      const totalDistributed = payouts.reduce((acc, p) => acc + p.amount, 0);
+      totalEl.textContent = formatPHP(totalDistributed);
+
+      stepsEl.innerHTML = payouts.map((p, idx) => `
+        <div id="cascade-step-${idx}" class="opacity-30 flex items-center justify-between p-3 rounded-xl bg-royal-950/80 border border-white/10 transition-all duration-300">
+          <div class="flex items-center gap-3 min-w-0">
+            <span class="w-8 h-8 rounded-lg gold-gradient text-royal-950 font-extrabold text-xs flex items-center justify-center flex-shrink-0">L${p.level}</span>
+            <div class="min-w-0">
+              <p class="text-xs sm:text-sm font-bold text-white truncate">${p.upline.fullName}</p>
+              <p class="text-[11px] font-mono text-gold-300">${p.upline.referralCode} (@${p.upline.username})</p>
+            </div>
+          </div>
+          <span class="text-xs sm:text-sm font-extrabold text-emerald-400">+${formatPHP(p.amount)}</span>
+        </div>
+      `).join('');
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+
+      payouts.forEach((p, idx) => {
+        setTimeout(() => {
+          const row = document.getElementById(`cascade-step-${idx}`);
+          if (row) row.classList.add('cascade-lit');
+          playCelestialChime(440 + idx * 32, 0.35);
+        }, idx * 140);
+      });
+    }
+
+    function closeCascadeModal() {
+      const modal = document.getElementById('cascade-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // =========================================================================
+    // 6. DASHBOARD NAVIGATION & DATA RENDERING
+    // =========================================================================
+    function enterDashboard() {
+      if (!guardSystemUnlocked()) return;
+      const user = getCurrentUser();
+      if (!user) return;
+
+      document.getElementById('auth-screen').classList.add('hidden');
+      document.getElementById('dashboard-screen').classList.remove('hidden');
+      setAuthBackdropMode(false);
+
+      selectedTreeCode = user.referralCode;
+      expandedCodes.add(user.referralCode);
+
+      const adminNav = document.getElementById('nav-admin-btn');
+      if (user.role === 'admin') {
+        adminNav.classList.remove('hidden');
+      } else {
+        adminNav.classList.add('hidden');
+      }
+
+      document.getElementById('encode-sponsor-code').value = user.referralCode;
+      renderOfficialRatesTable();
+      runIncomeProjector();
+      refreshAllViews();
+      navigateTo('overview');
+    }
+
+    function toggleMobileSidebar(show) {
+      const sidebar = document.getElementById('sidebar');
+      const backdrop = document.getElementById('sidebar-backdrop');
+      if (show) {
+        sidebar.classList.remove('-translate-x-full');
+        backdrop.classList.remove('hidden');
+      } else {
+        sidebar.classList.add('-translate-x-full');
+        backdrop.classList.add('hidden');
+      }
+    }
+
+    function navigateTo(viewName) {
+      if (isSystemExpired()) return;
+      const titles = {
+        overview: 'Dashboard Overview',
+        matrix: '15-Level Matrix & Genealogy Tree',
+        encode: 'Encode New Memorial Associate',
+        projector: 'Compensation Plan & Income Projector',
+        wallet: 'E-Wallet & Encashment Ledger',
+        admin: 'Master Admin & Database Controls'
+      };
+
+      document.getElementById('page-title').textContent = titles[viewName] || 'Dashboard Overview';
+
+      ['overview', 'matrix', 'encode', 'projector', 'wallet', 'admin'].forEach(v => {
+        const sec = document.getElementById(`view-${v}`);
+        if (sec) sec.classList.toggle('hidden', v !== viewName);
+      });
+
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        const isCurrent = btn.dataset.nav === viewName;
+        if (isCurrent) {
+          btn.className = 'nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left gold-gradient text-royal-950 shadow-md';
+        } else {
+          btn.className = 'nav-item w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition text-left text-white bg-royal-950/50 backdrop-blur-md border border-white/10 hover:bg-royal-950/75 shadow-sm';
+          if (btn.dataset.nav === 'admin' && getCurrentUser()?.role !== 'admin') {
+            btn.classList.add('hidden');
+          }
+        }
+      });
+
+      toggleMobileSidebar(false);
+      refreshAllViews();
+      lucide.createIcons();
+    }
+
+    function refreshAllViews() {
+      const user = getCurrentUser();
+      if (!user) return;
+
+      document.getElementById('sidebar-user-name').textContent = user.fullName;
+      document.getElementById('sidebar-user-username').textContent = user.username;
+      document.getElementById('sidebar-user-refcode').textContent = user.referralCode;
+      document.getElementById('sidebar-user-badge').textContent = user.role === 'admin' ? 'Master' : formatPHPWhole(user.packageAmount);
+      document.getElementById('sidebar-user-wallet').textContent = formatPHP(user.walletBalance);
+      document.getElementById('topbar-wallet-balance').textContent = formatPHP(user.walletBalance);
+
+      renderOverview();
+      renderMatrixAndTree();
+      updateEncodeCascadePreview();
+      renderWalletAndLedger();
+      if (user.role === 'admin') {
+        renderAdminControls();
+      }
+      lucide.createIcons();
+    }
+
+    // Collect downlines by generation (1..15) for a given root referral code
+    function getDownlinesByLevel(rootCode) {
+      const byLevel = {};
+      for (let i = 1; i <= 15; i++) byLevel[i] = [];
+
+      let currentParents = [rootCode];
+      for (let lvl = 1; lvl <= 15; lvl++) {
+        const nextParents = [];
+        db.members.forEach(m => {
+          if (m.sponsorCode && currentParents.includes(m.sponsorCode)) {
+            byLevel[lvl].push(m);
+            nextParents.push(m.referralCode);
+          }
+        });
+        currentParents = nextParents;
+        if (currentParents.length === 0) break;
+      }
+      return byLevel;
+    }
+
+    // =========================================================================
+    // 7. VIEW 1: EXECUTIVE OVERVIEW & CHART.JS
+    // =========================================================================
+    function renderOverview() {
+      const user = getCurrentUser();
+      if (!user) return;
+
+      const byLevel = getDownlinesByLevel(user.referralCode);
+      const level1 = byLevel[1] || [];
+      const execCount = level1.filter(m => m.packageAmount === 12000).length;
+      const stdCount = level1.filter(m => m.packageAmount === 6000).length;
+
+      let totalNetwork = 0;
+      for (let i = 1; i <= 15; i++) totalNetwork += byLevel[i].length;
+
+      animateValue('kpi-available-wallet', user.walletBalance, true);
+      animateValue('kpi-total-earned', user.totalEarned, true);
+      animateValue('kpi-direct-count', level1.length, false);
+      animateValue('kpi-network-size', totalNetwork, false);
+      document.getElementById('kpi-direct-sub').textContent = `${execCount} Executive • ${stdCount} Standard`;
+
+      document.getElementById('overview-ref-code-badge').textContent = user.referralCode;
+      const baseUrl = window.location.origin && window.location.origin !== 'null'
+        ? window.location.origin + window.location.pathname
+        : 'https://tangkilikanmemorial.ph/';
+      document.getElementById('referral-link-input').value = `${baseUrl}?ref=${user.referralCode}`;
+
+      // Level-by-Level Earnings Array (L1..L15)
+      const userCommissions = db.commissions.filter(c => c.beneficiaryUsername === user.username);
+      const levelTotals = Array.from({ length: 15 }, (_, idx) => {
+        const lvl = idx + 1;
+        return userCommissions
+          .filter(c => c.level === lvl)
+          .reduce((sum, c) => sum + Number(c.amount || 0), 0);
+      });
+
+      const ctx = document.getElementById('earningsByLevelChart');
+      if (ctx) {
+        if (earningsChartInstance) earningsChartInstance.destroy();
+        earningsChartInstance = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: Array.from({ length: 15 }, (_, i) => `L${i + 1}`),
+            datasets: [{
+              label: 'Commission Earned (₱)',
+              data: levelTotals,
+              backgroundColor: 'rgba(212, 175, 55, 0.78)',
+              borderColor: '#f7e08b',
+              borderWidth: 1.5,
+              borderRadius: 6
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (context) => `Earned: ${formatPHP(context.raw)}`
+                }
+              }
+            },
+            scales: {
+              x: {
+                ticks: { color: '#cbd5e1', font: { size: 11 } },
+                grid: { color: 'rgba(255,255,255,0.06)' }
+              },
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  color: '#f7e08b',
+                  font: { size: 11 },
+                  callback: (val) => '₱' + val.toLocaleString()
+                },
+                grid: { color: 'rgba(255,255,255,0.08)' }
+              }
+            }
+          }
+        });
+      }
+
+      // Recent Commission Feed
+      const feedEl = document.getElementById('overview-activity-feed');
+      const recent = userCommissions.slice(0, 12);
+      if (recent.length === 0) {
+        feedEl.innerHTML = `
+          <div class="p-6 rounded-2xl bg-royal-950/60 border border-white/10 text-center text-xs text-slate-400">
+            No commissions recorded yet. Share your referral code (<strong class="text-gold-300">${user.referralCode}</strong>) or encode a member to begin earning across 15 levels.
+          </div>
+        `;
+      } else {
+        feedEl.innerHTML = recent.map(c => `
+          <div class="p-3 rounded-xl bg-royal-950/75 border border-white/10 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2.5 min-w-0">
+              <span class="px-2 py-1 rounded-lg gold-gradient text-royal-950 font-extrabold text-[11px] flex-shrink-0">L${c.level}</span>
+              <div class="min-w-0">
+                <p class="text-xs font-bold text-white truncate">${c.fromFullName}</p>
+                <p class="text-[10px] text-slate-400">${formatPHPWhole(c.packageAmount)} Plan • ${c.createdAt}</p>
+              </div>
+            </div>
+            <span class="text-xs font-extrabold text-emerald-400 flex-shrink-0">+${formatPHP(c.amount)}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    // =========================================================================
+    // 8. VIEW 2: 15-LEVEL MATRIX & INTERACTIVE GENEALOGY TREE
+    // =========================================================================
+    function renderMatrixAndTree() {
+      const user = getCurrentUser();
+      if (!user) return;
+
+      const byLevel = getDownlinesByLevel(user.referralCode);
+      const userCommissions = db.commissions.filter(c => c.beneficiaryUsername === user.username);
+
+      document.getElementById('matrix-total-earned').textContent = formatPHP(user.totalEarned);
+
+      const tbody = document.getElementById('matrix-table-body');
+      let rowsHtml = '';
+      for (let lvl = 1; lvl <= 15; lvl++) {
+        const rate12k = COMPENSATION_RATES[12000][lvl];
+        const rate6k = COMPENSATION_RATES[6000][lvl];
+        const memberCount = byLevel[lvl].length;
+        const levelEarned = userCommissions
+          .filter(c => c.level === lvl)
+          .reduce((sum, c) => sum + Number(c.amount || 0), 0);
+
+        rowsHtml += `
+          <tr class="hover:bg-white/5 transition">
+            <td class="py-2.5 px-4 font-bold text-gold-300">Level ${lvl} ${lvl === 1 ? '<span class="ml-1 text-[10px] px-1.5 py-0.5 rounded bg-gold-500/20 text-gold-300">Direct</span>' : ''}</td>
+            <td class="py-2.5 px-4 text-slate-200 font-semibold">${formatPHPWhole(rate12k)}</td>
+            <td class="py-2.5 px-4 text-blue-200 font-semibold">${formatPHPWhole(rate6k)}</td>
+            <td class="py-2.5 px-4 text-center font-bold text-white">${memberCount}</td>
+            <td class="py-2.5 px-4 text-right font-extrabold ${levelEarned > 0 ? 'text-emerald-400' : 'text-slate-400'}">${formatPHP(levelEarned)}</td>
+          </tr>
+        `;
+      }
+      tbody.innerHTML = rowsHtml;
+
+      renderGenealogyTree(user.referralCode);
+      renderNodeInspector(selectedTreeCode || user.referralCode);
+    }
+
+    function renderGenealogyTree(rootCode) {
+      const container = document.getElementById('genealogy-tree-container');
+      const rootMember = db.members.find(m => m.referralCode === rootCode);
+      if (!rootMember) return;
+
+      function buildNodeHtml(member, depth) {
+        if (depth > 15) return '';
+        const children = db.members.filter(m => m.sponsorCode === member.referralCode);
+        const hasChildren = children.length > 0;
+        const isExpanded = expandedCodes.has(member.referralCode);
+        const isSelected = selectedTreeCode === member.referralCode;
+
+        const indentPx = Math.min(depth * 18, 220);
+        const childrenHtml = (hasChildren && isExpanded)
+          ? children.map(child => buildNodeHtml(child, depth + 1)).join('')
+          : '';
+
+        return `
+          <div style="margin-left: ${indentPx}px" class="mt-1.5">
+            <div onclick="selectTreeNode('${member.referralCode}')" class="cursor-pointer p-2.5 rounded-xl border ${isSelected ? 'border-gold-400 bg-gold-500/15' : 'border-white/10 bg-royal-950/75 hover:border-gold-500/40'} flex items-center justify-between gap-2 transition">
+              <div class="flex items-center gap-2 min-w-0">
+                ${hasChildren
+                  ? `<button type="button" onclick="event.stopPropagation(); toggleTreeExpand('${member.referralCode}')" class="w-6 h-6 rounded-lg bg-white/10 hover:bg-white/20 text-gold-300 flex items-center justify-center text-xs font-bold flex-shrink-0">${isExpanded ? '−' : '+'}</button>`
+                  : `<span class="w-6 h-6 rounded-lg bg-white/5 text-slate-500 flex items-center justify-center text-[10px] flex-shrink-0">•</span>`
+                }
+                <span class="px-2 py-0.5 rounded-md ${depth === 0 ? 'gold-gradient text-royal-950 font-extrabold' : 'bg-blue-500/25 text-blue-200 font-bold'} text-[10px] flex-shrink-0">
+                  ${depth === 0 ? 'ROOT' : 'L' + depth}
+                </span>
+                <div class="min-w-0">
+                  <p class="text-xs font-bold text-white truncate">${member.fullName}</p>
+                  <p class="text-[10px] font-mono text-gold-300">${member.referralCode} • @${member.username}</p>
+                </div>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <span class="text-[11px] font-bold ${member.packageAmount === 12000 ? 'text-gold-300' : 'text-blue-300'}">${formatPHPWhole(member.packageAmount)}</span>
+                <p class="text-[10px] text-slate-400">${children.length} direct</p>
+              </div>
+            </div>
+            ${childrenHtml}
+          </div>
+        `;
+      }
+
+      container.innerHTML = buildNodeHtml(rootMember, 0);
+    }
+
+    function toggleTreeExpand(code) {
+      if (expandedCodes.has(code)) {
+        expandedCodes.delete(code);
+      } else {
+        expandedCodes.add(code);
+      }
+      renderGenealogyTree(getCurrentUser().referralCode);
+    }
+
+    function expandAllTreeNodes() {
+      db.members.forEach(m => expandedCodes.add(m.referralCode));
+      renderGenealogyTree(getCurrentUser().referralCode);
+    }
+
+    function selectTreeNode(code) {
+      selectedTreeCode = code;
+      renderGenealogyTree(getCurrentUser().referralCode);
+      renderNodeInspector(code);
+    }
+
+    function renderNodeInspector(code) {
+      const el = document.getElementById('member-inspector-body');
+      const m = db.members.find(x => x.referralCode === code);
+      if (!m) return;
+
+      const byLevel = getDownlinesByLevel(m.referralCode);
+      let teamCount = 0;
+      for (let i = 1; i <= 15; i++) teamCount += byLevel[i].length;
+
+      el.innerHTML = `
+        <div class="p-3 rounded-xl bg-royal-950/80 border border-gold-500/25">
+          <p class="text-base font-bold text-white">${m.fullName}</p>
+          <p class="text-xs font-mono text-gold-300 mt-0.5">${m.referralCode} (@${m.username})</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2.5 text-xs">
+          <div class="p-2.5 rounded-xl bg-white/5">
+            <span class="text-slate-400 block">Plan Tier</span>
+            <strong class="text-gold-300">${formatPHPWhole(m.packageAmount)}</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-white/5">
+            <span class="text-slate-400 block">Sponsor Code</span>
+            <strong class="font-mono text-white">${m.sponsorCode || 'ROOT'}</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-white/5">
+            <span class="text-slate-400 block">Direct Referrals</span>
+            <strong class="text-emerald-400">${byLevel[1].length}</strong>
+          </div>
+          <div class="p-2.5 rounded-xl bg-white/5">
+            <span class="text-slate-400 block">15-Level Team</span>
+            <strong class="text-blue-300">${teamCount}</strong>
+          </div>
+        </div>
+        <div class="text-xs space-y-1 pt-2 border-t border-white/10 text-slate-300">
+          <p><span class="text-slate-400">Email:</span> ${m.email}</p>
+          <p><span class="text-slate-400">Mobile:</span> ${m.mobile}</p>
+          <p><span class="text-slate-400">Activated:</span> ${m.createdAt}</p>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // 9. VIEW 3: DIRECT DOWNLINE ENCODING & LIVE CASCADE PREVIEW
+    // =========================================================================
+    function updateEncodeCascadePreview() {
+      const codeInput = document.getElementById('encode-sponsor-code');
+      const statusEl = document.getElementById('encode-sponsor-status');
+      const listEl = document.getElementById('encode-cascade-list');
+      const badgeEl = document.getElementById('cascade-total-badge');
+      if (!codeInput || !listEl) return;
+
+      const sponsorCode = codeInput.value.trim().toUpperCase();
+      const pkgInput = document.querySelector('input[name="encode-package"]:checked');
+      const packageAmount = pkgInput ? Number(pkgInput.value) : 12000;
+      const rateTable = COMPENSATION_RATES[packageAmount];
+
+      const sponsor = db.members.find(m => m.referralCode === sponsorCode);
+      if (!sponsor) {
+        statusEl.className = 'text-xs mt-1 text-rose-400';
+        statusEl.textContent = 'Invalid Sponsor Referral Code.';
+        badgeEl.textContent = '₱0.00';
+        listEl.innerHTML = `<p class="text-xs text-slate-400 p-4 text-center">Enter a valid Sponsor Referral Code to preview the 15-level upline commission cascade.</p>`;
+        return;
+      }
+
+      statusEl.className = 'text-xs mt-1 text-emerald-400';
+      statusEl.textContent = `Sponsor verified: ${sponsor.fullName} (${sponsor.referralCode})`;
+
+      let html = '';
+      let totalPayout = 0;
+      let currentCode = sponsorCode;
+      let lvl = 1;
+
+      while (currentCode && lvl <= 15) {
+        const upline = db.members.find(m => m.referralCode === currentCode);
+        if (!upline) break;
+        const amt = rateTable[lvl] || 0;
+        totalPayout += amt;
+
+        html += `
+          <div class="p-2.5 rounded-xl bg-royal-950/75 border border-white/10 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="w-7 h-7 rounded-lg gold-gradient text-royal-950 font-extrabold text-[11px] flex items-center justify-center flex-shrink-0">L${lvl}</span>
+              <div class="min-w-0">
+                <p class="text-xs font-bold text-white truncate">${upline.fullName}</p>
+                <p class="text-[10px] font-mono text-gold-300">${upline.referralCode}</p>
+              </div>
+            </div>
+            <span class="text-xs font-extrabold text-emerald-400">+${formatPHPWhole(amt)}</span>
+          </div>
+        `;
+
+        currentCode = upline.sponsorCode;
+        lvl++;
+      }
+
+      badgeEl.textContent = formatPHP(totalPayout);
+      listEl.innerHTML = html;
+    }
+
+    function handleDashboardEncode(e) {
+      e.preventDefault();
+      if (!guardSystemActive()) return;
+      const sponsorCode = document.getElementById('encode-sponsor-code').value.trim().toUpperCase();
+      const fullName = document.getElementById('encode-fullname').value.trim();
+      const username = document.getElementById('encode-username').value.trim().toLowerCase();
+      const email = document.getElementById('encode-email').value.trim();
+      const mobile = document.getElementById('encode-mobile').value.trim();
+      const password = document.getElementById('encode-password').value;
+      const packageAmount = Number(document.querySelector('input[name="encode-package"]:checked').value);
+
+      const sponsor = db.members.find(m => m.referralCode === sponsorCode);
+      if (!sponsor) {
+        showToast('Invalid Sponsor Referral Code.', 'error');
+        return;
+      }
+
+      if (!/^[a-z0-9_.-]{3,24}$/.test(username)) {
+        showToast('Username must be 3–24 characters (letters, numbers, dots, underscores).', 'error');
+        return;
+      }
+
+      if (db.members.some(m => m.username === username)) {
+        showToast('Username already exists. Please choose a unique username.', 'error');
+        return;
+      }
+
+      const { newMember, payouts } = enrollMemberAndDistribute({
+        fullName, username, email, mobile, password, sponsorCode, packageAmount
+      });
+
+      expandedCodes.add(sponsorCode);
+      e.target.reset();
+      document.getElementById('encode-sponsor-code').value = getCurrentUser().referralCode;
+
+      refreshAllViews();
+      showCascadeModal(newMember, payouts);
+    }
+
+    // =========================================================================
+    // 10. VIEW 4: COMPENSATION PLAN & DUPLICATION INCOME PROJECTOR
+    // =========================================================================
+    function renderOfficialRatesTable() {
+      const tbody = document.getElementById('official-rates-tbody');
+      if (!tbody) return;
+      let html = '';
+      for (let lvl = 1; lvl <= 15; lvl++) {
+        html += `
+          <tr class="hover:bg-white/5">
+            <td class="py-2 px-3 font-bold text-white">Level ${lvl} ${lvl === 1 ? '(Direct)' : ''}</td>
+            <td class="py-2 px-3 text-right font-bold text-gold-300">${formatPHP(COMPENSATION_RATES[12000][lvl])}</td>
+            <td class="py-2 px-3 text-right font-bold text-blue-300">${formatPHP(COMPENSATION_RATES[6000][lvl])}</td>
+          </tr>
+        `;
+      }
+      tbody.innerHTML = html;
+    }
+
+    function runIncomeProjector() {
+      const dup = Number(document.getElementById('sim-duplication-slider').value);
+      const pct12k = Number(document.getElementById('sim-mix-slider').value);
+      const pct6k = 100 - pct12k;
+
+      document.getElementById('sim-duplication-val').textContent = `${dup} Referrals`;
+      document.getElementById('sim-mix-val').textContent = `${pct12k}% / ${pct6k}%`;
+
+      const tbody = document.getElementById('sim-results-tbody');
+      let totalTeam = 0;
+      let totalIncome = 0;
+      let rowsHtml = '';
+
+      for (let lvl = 1; lvl <= 15; lvl++) {
+        const membersAtLevel = Math.pow(dup, lvl);
+        const weightedRate = (COMPENSATION_RATES[12000][lvl] * (pct12k / 100)) +
+                             (COMPENSATION_RATES[6000][lvl] * (pct6k / 100));
+        const levelIncome = membersAtLevel * weightedRate;
+
+        totalTeam += membersAtLevel;
+        totalIncome += levelIncome;
+
+        rowsHtml += `
+          <tr class="hover:bg-white/5">
+            <td class="py-2 px-3 font-bold text-gold-300">Level ${lvl}</td>
+            <td class="py-2 px-3 text-right text-slate-200">${membersAtLevel.toLocaleString('en-PH')}</td>
+            <td class="py-2 px-3 text-right text-blue-200">${formatPHP(weightedRate)}</td>
+            <td class="py-2 px-3 text-right font-bold text-emerald-400">${formatPHP(levelIncome)}</td>
+          </tr>
+        `;
+      }
+
+      tbody.innerHTML = rowsHtml;
+      document.getElementById('sim-total-team').textContent = totalTeam.toLocaleString('en-PH');
+      document.getElementById('sim-total-income').textContent = formatPHP(totalIncome);
+    }
+
+    // =========================================================================
+    // 11. VIEW 5: E-WALLET, ENCASHMENT & COMMISSION AUDIT LEDGER
+    // =========================================================================
+    function handleWithdrawalRequest(e) {
+      e.preventDefault();
+      if (!guardSystemActive()) return;
+      const user = getCurrentUser();
+      if (!user) return;
+
+      const method = document.getElementById('withdraw-method').value;
+      const accountName = document.getElementById('withdraw-account-name').value.trim();
+      const accountNumber = document.getElementById('withdraw-account-number').value.trim();
+      const amount = Number(document.getElementById('withdraw-amount').value);
+
+      if (isNaN(amount) || amount < 500) {
+        showToast('Minimum encashment amount is ₱500.00.', 'error');
+        return;
+      }
+
+      if (amount > user.walletBalance) {
+        showToast('Insufficient E-Wallet balance for this encashment request.', 'error');
+        return;
+      }
+
+      user.walletBalance = Number(user.walletBalance) - amount;
+      db.withdrawals.unshift({
+        id: 'WD-' + Date.now().toString().slice(-6),
+        username: user.username,
+        fullName: user.fullName,
+        referralCode: user.referralCode,
+        method,
+        accountName,
+        accountNumber,
+        amount,
+        status: 'Pending',
+        createdAt: new Date().toLocaleString('en-US', {
+          year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit'
+        })
+      });
+
+      saveDB();
+      e.target.reset();
+      playCelestialChime(659.25, 0.45);
+      showToast(`Encashment request for ${formatPHP(amount)} submitted.`);
+      refreshAllViews();
+    }
+
+    function renderWalletAndLedger() {
+      const user = getCurrentUser();
+      if (!user) return;
+
+      const userWithdrawals = user.role === 'admin'
+        ? db.withdrawals
+        : db.withdrawals.filter(w => w.username === user.username);
+
+      const withdrawnSum = db.withdrawals
+        .filter(w => w.username === user.username && w.status !== 'Rejected')
+        .reduce((sum, w) => sum + Number(w.amount || 0), 0);
+
+      document.getElementById('wallet-page-balance').textContent = formatPHP(user.walletBalance);
+      document.getElementById('wallet-page-earned').textContent = formatPHP(user.totalEarned);
+      document.getElementById('wallet-page-withdrawn').textContent = formatPHP(withdrawnSum);
+
+      const payoutTbody = document.getElementById('payout-requests-tbody');
+      if (userWithdrawals.length === 0) {
+        payoutTbody.innerHTML = `<tr><td colspan="5" class="py-6 text-center text-slate-400">No encashment requests recorded yet.</td></tr>`;
+      } else {
+        payoutTbody.innerHTML = userWithdrawals.map(w => {
+          const badgeClass = w.status === 'Approved'
+            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
+            : w.status === 'Rejected'
+              ? 'bg-rose-500/20 text-rose-300 border-rose-400/30'
+              : 'bg-amber-500/20 text-amber-300 border-amber-400/30';
+          return `
+            <tr class="hover:bg-white/5">
+              <td class="py-2.5 px-3"><span class="font-mono text-gold-300 font-bold">${w.id}</span><br><span class="text-[10px] text-slate-400">${w.createdAt}</span></td>
+              <td class="py-2.5 px-3 font-semibold text-white">${w.fullName}</td>
+              <td class="py-2.5 px-3 text-slate-300">${w.method} • ${w.accountName} (${w.accountNumber})</td>
+              <td class="py-2.5 px-3 text-right font-extrabold text-gold-300">${formatPHP(w.amount)}</td>
+              <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded-full border text-[10px] font-bold ${badgeClass}">${w.status}</span></td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // Commission Audit Ledger
+      const searchVal = (document.getElementById('ledger-search')?.value || '').trim().toLowerCase();
+      const lvlFilter = document.getElementById('ledger-level-filter')?.value || 'all';
+
+      let filtered = db.commissions.filter(c => c.beneficiaryUsername === user.username);
+      if (lvlFilter !== 'all') {
+        filtered = filtered.filter(c => String(c.level) === lvlFilter);
+      }
+      if (searchVal) {
+        filtered = filtered.filter(c =>
+          c.fromFullName.toLowerCase().includes(searchVal) ||
+          c.fromCode.toLowerCase().includes(searchVal) ||
+          c.fromUsername.toLowerCase().includes(searchVal)
+        );
+      }
+
+      const ledgerTbody = document.getElementById('commission-ledger-tbody');
+      if (filtered.length === 0) {
+        ledgerTbody.innerHTML = `<tr><td colspan="5" class="py-6 text-center text-slate-400">No commission records match your current filter.</td></tr>`;
+      } else {
+        ledgerTbody.innerHTML = filtered.map(c => `
+          <tr class="hover:bg-white/5">
+            <td class="py-2.5 px-3 text-slate-300">${c.createdAt}</td>
+            <td class="py-2.5 px-3 font-semibold text-white">${c.fromFullName} <span class="font-mono text-[10px] text-gold-300">(${c.fromCode})</span></td>
+            <td class="py-2.5 px-3 text-slate-200">${formatPHPWhole(c.packageAmount)} Plan</td>
+            <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded-md gold-gradient text-royal-950 font-extrabold text-[10px]">Level ${c.level}</span></td>
+            <td class="py-2.5 px-3 text-right font-extrabold text-emerald-400">+${formatPHP(c.amount)}</td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    // =========================================================================
+    // 12. VIEW 6: MASTER ADMIN & DATABASE CONTROLS
+    // =========================================================================
+    function renderAdminControls() {
+      const wdTbody = document.getElementById('admin-withdrawals-tbody');
+      if (db.withdrawals.length === 0) {
+        wdTbody.innerHTML = `<tr><td colspan="6" class="py-6 text-center text-slate-400">No encashment requests in queue.</td></tr>`;
+      } else {
+        wdTbody.innerHTML = db.withdrawals.map(w => {
+          const badgeClass = w.status === 'Approved'
+            ? 'bg-emerald-500/20 text-emerald-300 border-emerald-400/30'
+            : w.status === 'Rejected'
+              ? 'bg-rose-500/20 text-rose-300 border-rose-400/30'
+              : 'bg-amber-500/20 text-amber-300 border-amber-400/30';
+
+          const actionsHtml = w.status === 'Pending'
+            ? `
+              <div class="flex items-center justify-end gap-1.5">
+                <button onclick="processAdminWithdrawal('${w.id}', 'Approved')" class="px-2.5 py-1 rounded-lg bg-emerald-500/25 hover:bg-emerald-500/40 text-emerald-200 font-bold text-[11px] transition">Approve</button>
+                <button onclick="processAdminWithdrawal('${w.id}', 'Rejected')" class="px-2.5 py-1 rounded-lg bg-rose-500/25 hover:bg-rose-500/40 text-rose-200 font-bold text-[11px] transition">Reject</button>
+              </div>
+            `
+            : `<span class="text-[11px] text-slate-500">Processed</span>`;
+
+          return `
+            <tr class="hover:bg-white/5">
+              <td class="py-2.5 px-3"><span class="font-mono text-gold-300 font-bold">${w.id}</span><br><span class="text-[10px] text-slate-400">${w.createdAt}</span></td>
+              <td class="py-2.5 px-3 font-semibold text-white">${w.fullName} <span class="text-[10px] text-slate-400">(@${w.username})</span></td>
+              <td class="py-2.5 px-3 text-slate-300">${w.method} • ${w.accountName} (${w.accountNumber})</td>
+              <td class="py-2.5 px-3 text-right font-extrabold text-gold-300">${formatPHP(w.amount)}</td>
+              <td class="py-2.5 px-3 text-center"><span class="px-2 py-0.5 rounded-full border text-[10px] font-bold ${badgeClass}">${w.status}</span></td>
+              <td class="py-2.5 px-3 text-right">${actionsHtml}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      document.getElementById('admin-total-members-badge').textContent = `${db.members.length} Registered Account${db.members.length === 1 ? '' : 's'}`;
+      const memTbody = document.getElementById('admin-members-tbody');
+      memTbody.innerHTML = db.members.map(m => `
+        <tr class="hover:bg-white/5">
+          <td class="py-2.5 px-3 font-mono font-bold text-gold-300">${m.referralCode}</td>
+          <td class="py-2.5 px-3 font-semibold text-white">${m.fullName} <span class="text-[10px] text-slate-400">(@${m.username})</span></td>
+          <td class="py-2.5 px-3 text-slate-300">${m.email}<br><span class="text-[10px] text-slate-400">${m.mobile}</span></td>
+          <td class="py-2.5 px-3 font-mono text-blue-200">${m.sponsorCode || 'ROOT'}</td>
+          <td class="py-2.5 px-3 font-bold ${m.packageAmount === 12000 ? 'text-gold-300' : 'text-blue-300'}">${formatPHPWhole(m.packageAmount)}</td>
+          <td class="py-2.5 px-3 text-right font-bold text-white">${formatPHP(m.walletBalance)}</td>
+          <td class="py-2.5 px-3 text-right font-bold text-emerald-400">${formatPHP(m.totalEarned)}</td>
+        </tr>
+      `).join('');
+    }
+
+    function processAdminWithdrawal(id, decision) {
+      if (!guardSystemActive()) return;
+      const wd = db.withdrawals.find(w => w.id === id);
+      if (!wd || wd.status !== 'Pending') return;
+
+      wd.status = decision;
+      if (decision === 'Rejected') {
+        const member = db.members.find(m => m.username === wd.username);
+        if (member) {
+          member.walletBalance = Number(member.walletBalance || 0) + Number(wd.amount || 0);
+        }
+      }
+
+      saveDB();
+      showToast(`Encashment ${id} marked as ${decision}.`);
+      refreshAllViews();
+    }
+
+    function exportDatabaseJSON() {
+      const dataStr = JSON.stringify(db, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `tangkilikan-memorial-unilevel-backup-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('Production database exported to JSON.');
+    }
+
+    function importDatabaseJSON(e) {
+      if (!guardSystemUnlocked()) return;
+      const file = e.target.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const parsed = JSON.parse(ev.target.result);
+          if (!parsed || !Array.isArray(parsed.members) || !Array.isArray(parsed.commissions) || !Array.isArray(parsed.withdrawals)) {
+            throw new Error('Invalid backup structure');
+          }
+          db = parsed;
+          saveDB();
+          showToast('Database backup restored successfully!');
+          refreshAllViews();
+        } catch (err) {
+          showToast('Invalid JSON backup file.', 'error');
+        }
+        e.target.value = '';
+      };
+      reader.readAsText(file);
+    }
+
+    function confirmFactoryReset() {
+      if (!guardSystemUnlocked()) return;
+      showConfirmModal(
+        'Factory Reset Production System',
+        'This will permanently erase all enrolled members, commissions, and withdrawal logs, restoring only the root Master Admin account (admin / 123456) at ₱0.00 balance.',
+        () => {
+          if (!guardSystemUnlocked()) return;
+          db = createInitialProductionDB();
+          saveDB();
+          activeUsername = 'admin';
+          localStorage.setItem(SESSION_KEY, 'admin');
+          expandedCodes = new Set(['TMS-ADMIN']);
+          selectedTreeCode = 'TMS-ADMIN';
+          showToast('System reset to clean initial production state.');
+          refreshAllViews();
+        }
+      );
+    }
+
+    // =========================================================================
+    // 13. INITIALIZATION & TRANSPARENT GLASS INTERACTIVITY
+    // =========================================================================
+    function initAuthGlassEffects() {
+      const card = document.getElementById('auth-glass-card');
+      const specular = document.getElementById('auth-glass-specular');
+      if (card && specular) {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const rotateY = ((x / rect.width) - 0.5) * 4;
+          const rotateX = ((y / rect.height) - 0.5) * -4;
+          card.style.transform = `perspective(1200px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+          specular.style.opacity = '1';
+          specular.style.background = `radial-gradient(480px circle at ${x}px ${y}px, rgba(255, 248, 214, 0.14), rgba(56, 189, 248, 0.05) 45%, transparent 72%)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg)';
+          specular.style.opacity = '0';
+        });
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadDB();
+      lucide.createIcons();
+      initInteractiveTiltCards();
+      initAuthGlassEffects();
+      initPersistentExpirationTimer();
+
+      if (isSystemExpired()) return;
+
+      const params = new URLSearchParams(window.location.search);
+      const refCode = params.get('ref');
+      if (refCode) {
+        const cleanCode = refCode.trim().toUpperCase();
+        switchAuthTab('signup');
+        document.getElementById('signup-sponsor-code').value = cleanCode;
+        validateSignupSponsorCode();
+      }
+
+      const savedSession = localStorage.getItem(SESSION_KEY);
+      if (savedSession && db.members.some(m => m.username === savedSession)) {
+        activeUsername = savedSession;
+        enterDashboard();
+      }
+    });
+  </script>
+</body>
+</html>
